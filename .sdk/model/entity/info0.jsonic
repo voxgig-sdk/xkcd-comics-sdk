@@ -1,0 +1,116 @@
+# Entity: info0
+
+main: kit: entity: info0: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "alt"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "day"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "img"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "link"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "month"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "new"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "num"
+      req: true
+      type: "`$INTEGER`"
+    }
+    {
+      name: "safe_title"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "title"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "transcript"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "year"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "info0"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            params: [
+              {
+                example: 614
+                kind: "param"
+                name: "comic_id"
+                orig: "comic_id"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/{comic_id}/info.0.json"
+          parts: [
+            "{comic_id}"
+            "info.0.json"
+          ]
+          select: {
+            exist: [
+              "comic_id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          method: "GET"
+          orig: "/info.0.json"
+          parts: [
+            "info.0.json"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

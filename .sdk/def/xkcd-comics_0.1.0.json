@@ -1,0 +1,174 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "XKCD Comics",
+    "description": "Fetch comics and metadata from XKCD website in JSON format.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://xkcd.com/json.html"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://xkcd.com",
+      "description": "XKCD Production Server"
+    }
+  ],
+  "paths": {
+    "/info.0.json": {
+      "get": {
+        "summary": "Get current comic",
+        "description": "Fetches the current/latest XKCD comic and its metadata in JSON format.",
+        "operationId": "getCurrentComic",
+        "tags": [
+          "Comics"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with current comic data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Comic"
+                },
+                "example": {
+                  "month": "3",
+                  "num": 2500,
+                  "link": "",
+                  "year": "2021",
+                  "news": "",
+                  "safe_title": "Global Temperature Over My Lifetime",
+                  "transcript": "",
+                  "alt": "This is the graph that's seared into my mind.",
+                  "img": "https://imgs.xkcd.com/comics/global_temperature_over_my_lifetime.png",
+                  "title": "Global Temperature Over My Lifetime",
+                  "day": "1"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{comic_id}/info.0.json": {
+      "get": {
+        "summary": "Get specific comic",
+        "description": "Fetches a specific XKCD comic by its ID number and returns its metadata in JSON format.",
+        "operationId": "getComicById",
+        "tags": [
+          "Comics"
+        ],
+        "parameters": [
+          {
+            "name": "comic_id",
+            "in": "path",
+            "description": "The ID number of the comic to fetch",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "example": 614
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with comic data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Comic"
+                },
+                "example": {
+                  "month": "9",
+                  "num": 614,
+                  "link": "",
+                  "year": "2009",
+                  "news": "",
+                  "safe_title": "Woodpecker",
+                  "transcript": "[[A man with a beret and a woman are standing on a boardwalk, leaning on a handrail.]]\nMan: A woodpecker!\n<<Pop pop pop>>\nWoman: Yup.\n\n[[The woodpecker is banging its head against a tree.]]\nWoman: He hatched about this time last year.\n<<Pop pop pop pop>>\n\n[[The woman walks away.  The man is still looking at the woodpecker.]]\nMan: ... woodpecker?\nMan: It's your birthday!\n\nMan: Did you know?\n\nMan: Did... did nobody tell you?\n\n[[The man stands, looking.]]\n\n[[The man walks away.]]\n\n[[There is a tree.]]\n\n[[The man approaches the tree with a present in a box, tied up with a ribbon.]]\n\n[[The man sets the present down at the base of the tree and looks up.]]\n\n[[The man walks away.]]\n\n[[The present sits at the bottom of the tree as the sun sets.]]\n\n{{Title text: If you don't have an extension cord I can get that too.  Because we're friends!  Right?}}",
+                  "alt": "If you don't have an extension cord I can get that too.  Because we're friends!  Right?",
+                  "img": "https://imgs.xkcd.com/comics/woodpecker.png",
+                  "title": "Woodpecker",
+                  "day": "25"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Comic not found"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Comic": {
+        "type": "object",
+        "description": "XKCD comic metadata and content",
+        "properties": {
+          "month": {
+            "type": "string",
+            "description": "Month the comic was published"
+          },
+          "num": {
+            "type": "integer",
+            "description": "Comic number/ID"
+          },
+          "link": {
+            "type": "string",
+            "description": "Link to related content (often empty)"
+          },
+          "year": {
+            "type": "string",
+            "description": "Year the comic was published"
+          },
+          "news": {
+            "type": "string",
+            "description": "News or announcements (often empty)"
+          },
+          "safe_title": {
+            "type": "string",
+            "description": "URL-safe version of the comic title"
+          },
+          "transcript": {
+            "type": "string",
+            "description": "Text transcript of the comic (when available)"
+          },
+          "alt": {
+            "type": "string",
+            "description": "Alt text / hover text for the comic"
+          },
+          "img": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to the comic image"
+          },
+          "title": {
+            "type": "string",
+            "description": "Title of the comic"
+          },
+          "day": {
+            "type": "string",
+            "description": "Day of the month the comic was published"
+          }
+        },
+        "required": [
+          "month",
+          "num",
+          "year",
+          "title",
+          "img",
+          "day"
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Comics",
+      "description": "Operations related to XKCD comics"
+    }
+  ]
+}

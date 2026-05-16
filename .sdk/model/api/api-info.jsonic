@@ -1,0 +1,23 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://xkcd.com/json.html"
+      }
+      description: "Fetch comics and metadata from XKCD website in JSON format."
+      servers: [
+        {
+          description: "XKCD Production Server"
+          url: "https://xkcd.com"
+        }
+      ]
+      title: "XKCD Comics"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

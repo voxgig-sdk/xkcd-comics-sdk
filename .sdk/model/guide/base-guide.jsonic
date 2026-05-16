@@ -1,0 +1,17 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 1
+  metrics: count: path: 2
+  metrics: count: method: 2
+
+  entity: info0: {
+    path: "/info.0.json": {
+      op: load: method: *GET
+    }
+    path: "/{comic_id}/info.0.json": {
+      op: load: method: *GET
+    }
+  }
+
+}

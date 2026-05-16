@@ -1,0 +1,65 @@
+{
+  "existing": {
+    "info0": {
+      "INFO000": {
+        "alt": "s6e",
+        "day": "s6f",
+        "img": "s70",
+        "link": "s71",
+        "month": "s72",
+        "new": "s73",
+        "num": "s74",
+        "safe_title": "s75",
+        "title": "s76",
+        "transcript": "s77",
+        "year": "s78",
+        "comic_id": "COMIC01"
+      },
+      "INFO001": {
+        "alt": "sdc",
+        "day": "sdd",
+        "img": "sde",
+        "link": "sdf",
+        "month": "se0",
+        "new": "se1",
+        "num": "se2",
+        "safe_title": "se3",
+        "title": "se4",
+        "transcript": "se5",
+        "year": "se6",
+        "comic_id": "COMIC01"
+      },
+      "INFO002": {
+        "alt": "s14a",
+        "day": "s14b",
+        "img": "s14c",
+        "link": "s14d",
+        "month": "s14e",
+        "new": "s14f",
+        "num": "s150",
+        "safe_title": "s151",
+        "title": "s152",
+        "transcript": "s153",
+        "year": "s154",
+        "comic_id": "COMIC01"
+      }
+    }
+  },
+  "new": {
+    "info0": {
+      "info0_ref01": {
+        "alt": "s1b8",
+        "day": "s1b9",
+        "img": "s1ba",
+        "link": "s1bb",
+        "month": "s1bc",
+        "new": "s1bd",
+        "num": "s1be",
+        "safe_title": "s1bf",
+        "title": "s1c0",
+        "transcript": "s1c1",
+        "year": "s1c2"
+      }
+    }
+  }
+}
