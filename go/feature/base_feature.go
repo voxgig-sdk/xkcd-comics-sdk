@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/xkcd-comics-sdk/core"
+	"github.com/voxgig-sdk/xkcd-comics-sdk/go/core"
 )
 
 type BaseFeature struct {

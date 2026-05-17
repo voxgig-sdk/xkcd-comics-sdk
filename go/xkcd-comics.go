@@ -1,10 +1,10 @@
 package voxgigxkcdcomicssdk
 
 import (
-	"github.com/voxgig-sdk/xkcd-comics-sdk/core"
-	"github.com/voxgig-sdk/xkcd-comics-sdk/entity"
-	"github.com/voxgig-sdk/xkcd-comics-sdk/feature"
-	_ "github.com/voxgig-sdk/xkcd-comics-sdk/utility"
+	"github.com/voxgig-sdk/xkcd-comics-sdk/go/core"
+	"github.com/voxgig-sdk/xkcd-comics-sdk/go/entity"
+	"github.com/voxgig-sdk/xkcd-comics-sdk/go/feature"
+	_ "github.com/voxgig-sdk/xkcd-comics-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

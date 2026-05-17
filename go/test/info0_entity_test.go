@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/xkcd-comics-sdk"
-	"github.com/voxgig-sdk/xkcd-comics-sdk/core"
+	sdk "github.com/voxgig-sdk/xkcd-comics-sdk/go"
+	"github.com/voxgig-sdk/xkcd-comics-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/xkcd-comics-sdk/go/utility/struct"
 )
 
 func TestInfo0Entity(t *testing.T) {

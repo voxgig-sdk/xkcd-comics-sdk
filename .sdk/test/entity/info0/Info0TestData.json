@@ -13,7 +13,8 @@
         "title": "s76",
         "transcript": "s77",
         "year": "s78",
-        "comic_id": "COMIC01"
+        "comic_id": "COMIC01",
+        "id": "INFO000"
       },
       "INFO001": {
         "alt": "sdc",
@@ -27,7 +28,8 @@
         "title": "se4",
         "transcript": "se5",
         "year": "se6",
-        "comic_id": "COMIC01"
+        "comic_id": "COMIC01",
+        "id": "INFO001"
       },
       "INFO002": {
         "alt": "s14a",
@@ -41,7 +43,8 @@
         "title": "s152",
         "transcript": "s153",
         "year": "s154",
-        "comic_id": "COMIC01"
+        "comic_id": "COMIC01",
+        "id": "INFO002"
       }
     }
   },

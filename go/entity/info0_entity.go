@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/voxgig-sdk/xkcd-comics-sdk/core"
+	"github.com/voxgig-sdk/xkcd-comics-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/xkcd-comics-sdk/go/utility/struct"
 )
 
 type Info0Entity struct {

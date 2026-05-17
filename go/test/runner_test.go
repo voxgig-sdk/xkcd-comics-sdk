@@ -12,9 +12,9 @@ import (
 	"sync"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/xkcd-comics-sdk"
+	sdk "github.com/voxgig-sdk/xkcd-comics-sdk/go"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/xkcd-comics-sdk/go/utility/struct"
 )
 
 var envLocalOnce sync.Once

@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/xkcd-comics-sdk"
-	"github.com/voxgig-sdk/xkcd-comics-sdk/core"
+	sdk "github.com/voxgig-sdk/xkcd-comics-sdk/go"
+	"github.com/voxgig-sdk/xkcd-comics-sdk/go/core"
 )
 
 func TestInfo0Direct(t *testing.T) {
