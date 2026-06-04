@@ -20,9 +20,6 @@ class XkcdComicsConfig
             ],
             "options" => [
                 "base" => "https://xkcd.com",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],

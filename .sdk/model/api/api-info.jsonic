@@ -16,8 +16,27 @@ main: {
       ]
       title: "XKCD Comics"
       version: "1.0.0"
+      tagline: "Fetch XKCD webcomics and their metadata as JSON, including title, image URL, post date, and transcript"
+      homepage: "https://xkcd.com"
+      docs_url: "https://xkcd.com/json.html"
+      license_short: "Comics are licensed under Creative Commons Attribution-NonCommercial 2.5"
+      license_md: `- XKCD comics are offered under a [Creative Commons Attribution-NonCommercial 2.5 License](https://creativecommons.org/licenses/by-nc/2.5/).
+- You may copy and share the comics, but you may not sell them.
+- Attribution to Randall Munroe / xkcd.com is required when reusing comic content.
+- The JSON endpoints themselves are public and require no authentication.`
+      about_md: `[XKCD](https://xkcd.com) is Randall Munroe's long-running webcomic of "romance, sarcasm, math, and language," with new strips published every Monday, Wednesday, and Friday. The site exposes a small JSON API so applications can retrieve comics and their metadata programmatically.
+
+What you get from the API:
+
+- The latest comic via \`https://xkcd.com/info.0.json\`
+- Any specific comic by number via \`https://xkcd.com/{num}/info.0.json\`
+- Metadata for each comic, including title, image URL, post date, and a transcript when one is available
+
+The endpoints are public and unauthenticated. CORS is not enabled, so browser-based clients typically need to proxy requests through a server.`
+      entity_desc: {
+        info0: "Represents a single XKCD comic and its metadata (title, image URL, post date, alt text, transcript), retrieved from `https://xkcd.com/info.0.json` for the latest strip or `https://xkcd.com/{num}/info.0.json` for a specific comic number."
+      }
+      auth: false
     }
   }
-}
-
 }

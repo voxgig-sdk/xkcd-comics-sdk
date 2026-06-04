@@ -31,9 +31,7 @@ loading a specific record.
 ```ruby
 require_relative "XkcdComics_sdk"
 
-client = XkcdComicsSDK.new({
-  "apikey" => ENV["XKCD-COMICS_APIKEY"],
-})
+client = XkcdComicsSDK.new({})
 ```
 
 ### 3. Load a info0
@@ -121,7 +119,6 @@ Create a `.env.local` file at the project root:
 
 ```
 XKCD-COMICS_TEST_LIVE=TRUE
-XKCD-COMICS_APIKEY=<your-key>
 ```
 
 Then run:
@@ -144,7 +141,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `String` | API key for authentication. |
 | `base` | `String` | Base URL of the API server. |
 | `prefix` | `String` | URL path prefix prepended to all requests. |
 | `suffix` | `String` | URL path suffix appended to all requests. |

@@ -82,7 +82,6 @@ def info0_basic_setup(extra)
     "XKCDCOMICS_TEST_INFO__ENTID" => idmap,
     "XKCDCOMICS_TEST_LIVE" => "FALSE",
     "XKCDCOMICS_TEST_EXPLAIN" => "FALSE",
-    "XKCDCOMICS_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,7 +93,6 @@ def info0_basic_setup(extra)
   if env["XKCDCOMICS_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["XKCDCOMICS_APIKEY"],
       },
       extra || {},
     ])
