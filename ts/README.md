@@ -10,7 +10,7 @@ The TypeScript SDK for the XkcdComics API — a type-safe, entity-oriented clien
 
 ## Install
 ```bash
-npm install xkcd-comics
+npm install @voxgig-sdk/xkcd-comics
 ```
 ## Tutorial: your first API call
 

@@ -10,7 +10,7 @@ The Python SDK for the XkcdComics API — an entity-oriented client following Py
 
 ## Install
 ```bash
-pip install xkcd-comics-sdk
+pip install voxgig-sdk-xkcd-comics
 ```
 
 Or install from source:

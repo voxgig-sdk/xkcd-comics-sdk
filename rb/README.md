@@ -10,13 +10,13 @@ The Ruby SDK for the XkcdComics API — an entity-oriented client using idiomati
 
 ## Install
 ```bash
-gem install xkcd-comics-sdk
+gem install voxgig-sdk-xkcd-comics
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "xkcd-comics-sdk"
+gem "voxgig-sdk-xkcd-comics"
 ```
 
 Then run:

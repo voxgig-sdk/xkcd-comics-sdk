@@ -8,12 +8,14 @@ source = {
   dir = "xkcd-comics-sdk/lua"
 }
 description = {
-  summary = "XkcdComics SDK for Lua",
-  license = "MIT"
+  summary = "Unofficial generated Lua SDK for the XKCD Comics public API. Not affiliated with or endorsed by the upstream API provider.",
+  homepage = "https://github.com/voxgig-sdk/xkcd-comics-sdk",
+  issues_url = "https://github.com/voxgig-sdk/xkcd-comics-sdk/issues",
+  license = "MIT",
+  labels = { "voxgig", "sdk", "generated-sdk", "openapi", "api-client", "xkcd-comics" }
 }
 dependencies = {
   "lua >= 5.3",
-  "dkjson >= 2.5",
   "dkjson >= 2.5",
 }
 build = {

@@ -10,7 +10,7 @@ The PHP SDK for the XkcdComics API — an entity-oriented client using PHP conve
 
 ## Install
 ```bash
-composer require voxgig/xkcd-comics-sdk
+composer require voxgig-sdk/xkcd-comics
 ```
 
 
