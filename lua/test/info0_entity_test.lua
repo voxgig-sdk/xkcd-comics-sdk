@@ -91,6 +91,7 @@ function info0_basic_setup(extra)
     ["XKCDCOMICS_TEST_INFO__ENTID"] = idmap,
     ["XKCDCOMICS_TEST_LIVE"] = "FALSE",
     ["XKCDCOMICS_TEST_EXPLAIN"] = "FALSE",
+    ["XKCDCOMICS_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -102,6 +103,7 @@ function info0_basic_setup(extra)
   if env["XKCDCOMICS_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
+        apikey = env["XKCDCOMICS_APIKEY"],
       },
       extra or {},
     })

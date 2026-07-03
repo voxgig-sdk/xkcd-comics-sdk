@@ -70,12 +70,14 @@ function info0_direct_setup(mockres)
   local env = runner.env_override({
     ["XKCDCOMICS_TEST_INFO__ENTID"] = {},
     ["XKCDCOMICS_TEST_LIVE"] = "FALSE",
+    ["XKCDCOMICS_APIKEY"] = "NONE",
   })
 
   local live = env["XKCDCOMICS_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
+      apikey = env["XKCDCOMICS_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

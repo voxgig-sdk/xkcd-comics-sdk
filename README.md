@@ -1,20 +1,8 @@
 # XkcdComics SDK
 
-Fetch XKCD webcomics and their metadata as JSON, including title, image URL, post date, and transcript
+XKCD Comics client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About XKCD Comics
-
-[XKCD](https://xkcd.com) is Randall Munroe's long-running webcomic of "romance, sarcasm, math, and language," with new strips published every Monday, Wednesday, and Friday. The site exposes a small JSON API so applications can retrieve comics and their metadata programmatically.
-
-What you get from the API:
-
-- The latest comic via `https://xkcd.com/info.0.json`
-- Any specific comic by number via `https://xkcd.com/{num}/info.0.json`
-- Metadata for each comic, including title, image URL, post date, and a transcript when one is available
-
-The endpoints are public and unauthenticated. CORS is not enabled, so browser-based clients typically need to proxy requests through a server.
 
 ## Try it
 
@@ -48,27 +36,31 @@ gem install xkcd-comics-sdk
 luarocks install xkcd-comics-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { XkcdComicsSDK } from 'xkcd-comics'
 
-const client = new XkcdComicsSDK({})
+const client = new XkcdComicsSDK({
+  apikey: process.env.XKCD-COMICS_APIKEY,
+})
 
+// Load info0 data
+const info0 = await client.Info0().load({})
+console.log(info0.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -98,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Info0** | Represents a single XKCD comic and its metadata (title, image URL, post date, alt text, transcript), retrieved from `https://xkcd.com/info.0.json` for the latest strip or `https://xkcd.com/{num}/info.0.json` for a specific comic number. | `/{comic_id}/info.0.json` |
+| **Info0** |  | `/{comic_id}/info.0.json` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -108,15 +100,17 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from xkcdcomics_sdk import XkcdComicsSDK
 
-client = XkcdComicsSDK({})
+client = XkcdComicsSDK({
+    "apikey": os.environ.get("XKCD-COMICS_APIKEY"),
+})
 
 
 # Load a specific info0
-info0, err = client.Info0(None).load(
-    {"id": "example_id"}, None
-)
+info0, err = client.Info0().load({"id": "example_id"})
+print(info0)
 ```
 
 ### PHP
@@ -125,13 +119,14 @@ info0, err = client.Info0(None).load(
 <?php
 require_once 'xkcdcomics_sdk.php';
 
-$client = new XkcdComicsSDK([]);
+$client = new XkcdComicsSDK([
+    "apikey" => getenv("XKCD-COMICS_APIKEY"),
+]);
 
 
 // Load a specific info0
-[$info0, $err] = $client->Info0(null)->load(
-    ["id" => "example_id"], null
-);
+[$info0, $err] = $client->Info0()->load(["id" => "example_id"]);
+print_r($info0);
 ```
 
 ### Golang
@@ -139,8 +134,13 @@ $client = new XkcdComicsSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/xkcd-comics-sdk/go"
 
-client := sdk.NewXkcdComicsSDK(map[string]any{})
+client := sdk.NewXkcdComicsSDK(map[string]any{
+    "apikey": os.Getenv("XKCD-COMICS_APIKEY"),
+})
 
+// Load info0 data
+info0, err := client.Info0(nil).Load(map[string]any{}, nil)
+fmt.Println(info0)
 ```
 
 ### Ruby
@@ -148,13 +148,14 @@ client := sdk.NewXkcdComicsSDK(map[string]any{})
 ```ruby
 require_relative "XkcdComics_sdk"
 
-client = XkcdComicsSDK.new({})
+client = XkcdComicsSDK.new({
+  "apikey" => ENV["XKCD-COMICS_APIKEY"],
+})
 
 
 # Load a specific info0
-info0, err = client.Info0(nil).load(
-  { "id" => "example_id" }, nil
-)
+info0, err = client.Info0().load({ "id" => "example_id" })
+puts info0
 ```
 
 ### Lua
@@ -162,13 +163,14 @@ info0, err = client.Info0(nil).load(
 ```lua
 local sdk = require("xkcd-comics_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("XKCD-COMICS_APIKEY"),
+})
 
 
 -- Load a specific info0
-local info0, err = client:Info0(nil):load(
-  { id = "example_id" }, nil
-)
+local info0, err = client:Info0():load({ id = "example_id" })
+print(info0)
 ```
 
 ## Unit testing in offline mode
@@ -187,25 +189,21 @@ const result = await client.Info0().load({ id: 'test01' })
 ### Python
 
 ```python
-client = XkcdComicsSDK.test(None, None)
-result, err = client.Info0(None).load(
-    {"id": "test01"}, None
-)
+client = XkcdComicsSDK.test()
+result, err = client.Info0().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = XkcdComicsSDK::test(null, null);
-[$result, $err] = $client->Info0(null)->load(
-    ["id" => "test01"], null
-);
+$client = XkcdComicsSDK::test();
+[$result, $err] = $client->Info0()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Info0(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -214,19 +212,15 @@ result, err := client.Info0(nil).Load(
 ### Ruby
 
 ```ruby
-client = XkcdComicsSDK.test(nil, nil)
-result, err = client.Info0(nil).load(
-  { "id" => "test01" }, nil
-)
+client = XkcdComicsSDK.test
+result, err = client.Info0().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Info0(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Info0():load({ id = "test01" })
 ```
 
 ## How it works
@@ -330,16 +324,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the XKCD Comics
-
-- Upstream: [https://xkcd.com](https://xkcd.com)
-- API docs: [https://xkcd.com/json.html](https://xkcd.com/json.html)
-
-- XKCD comics are offered under a [Creative Commons Attribution-NonCommercial 2.5 License](https://creativecommons.org/licenses/by-nc/2.5/).
-- You may copy and share the comics, but you may not sell them.
-- Attribution to Randall Munroe / xkcd.com is required when reusing comic content.
-- The JSON endpoints themselves are public and require no authentication.
 
 ---
 

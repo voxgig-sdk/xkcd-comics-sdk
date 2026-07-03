@@ -111,6 +111,7 @@ function basicSetup(extra?: any) {
     'XKCD_COMICS_TEST_INFO__ENTID': idmap,
     'XKCD_COMICS_TEST_LIVE': 'FALSE',
     'XKCD_COMICS_TEST_EXPLAIN': 'FALSE',
+    'XKCD_COMICS_APIKEY': 'NONE',
   })
 
   idmap = env['XKCD_COMICS_TEST_INFO__ENTID']
@@ -120,6 +121,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new XkcdComicsSDK(merge([
       {
+        apikey: env.XKCD_COMICS_APIKEY,
       },
       extra
     ]))

@@ -79,12 +79,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'XKCDCOMICS_TEST_INFO__ENTID': {},
     'XKCDCOMICS_TEST_LIVE': 'FALSE',
+    'XKCDCOMICS_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.XKCDCOMICS_TEST_LIVE
 
   if (live) {
     const client = new XkcdComicsSDK({
+      apikey: env.XKCDCOMICS_APIKEY,
     })
 
     let idmap: any = env['XKCDCOMICS_TEST_INFO__ENTID']

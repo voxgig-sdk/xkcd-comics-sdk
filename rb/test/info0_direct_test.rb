@@ -69,12 +69,14 @@ def info0_direct_setup(mockres)
   env = Runner.env_override({
     "XKCDCOMICS_TEST_INFO__ENTID" => {},
     "XKCDCOMICS_TEST_LIVE" => "FALSE",
+    "XKCDCOMICS_APIKEY" => "NONE",
   })
 
   live = env["XKCDCOMICS_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
+      "apikey" => env["XKCDCOMICS_APIKEY"],
     }
     client = XkcdComicsSDK.new(merged_opts)
     return {
