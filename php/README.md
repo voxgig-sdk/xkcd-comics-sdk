@@ -33,9 +33,10 @@ $client = new XkcdComicsSDK();
 
 ```php
 try {
-    $result = $client->info0()->load(["id" => "example_id"]);
-    print_r($result);
-} catch (\Exception $err) {
+    // load() returns the bare Info0 record (throws on error).
+    $info0 = $client->Info0()->load(["id" => "example_id"]);
+    print_r($info0);
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -81,13 +82,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = XkcdComicsSDK::test();
+$client = XkcdComicsSDK::test([
+    "entity" => ["info0" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->info0()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$info0 = $client->Info0()->load(["id" => "test01"]);
+print_r($info0);
 ```
 
 ### Use a custom fetch function
@@ -166,7 +171,7 @@ Creates a test-mode client with mock transport. Both arguments may be `null`.
 | `get_utility` | `(): Utility` | Copy of the SDK utility object. |
 | `prepare` | `(array $fetchargs): array` | Build an HTTP request definition without sending. |
 | `direct` | `(array $fetchargs): array` | Build and send an HTTP request. |
-| `Info0` | `($data): Info0Entity` | Create a Info0 entity instance. |
+| `Info0` | `($data): Info0Entity` | Create an Info0 entity instance. |
 
 ### Entity interface
 
@@ -233,7 +238,7 @@ API path: `/{comic_id}/info.0.json`
 
 ### Info0
 
-Create an instance: `const info0 = client.info0`
+Create an instance: `$info0 = $client->Info0();`
 
 #### Operations
 
@@ -259,8 +264,9 @@ Create an instance: `const info0 = client.info0`
 
 #### Example: Load
 
-```ts
-const info0 = await client.info0.load({ id: 'info0_id' })
+```php
+// load() returns the bare Info0 record (throws on error).
+$info0 = $client->Info0()->load(["id" => "info0_id"]);
 ```
 
 
@@ -335,7 +341,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$info0 = $client->info0();
+$info0 = $client->Info0();
 $info0->load(["id" => "example_id"]);
 
 // $info0->dataGet() now returns the loaded info0 data

@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:info0():list() / client:info0():load({ id = ... })
-function XkcdComicsSDK:info0(data)
+-- Idiomatic facade: client:Info0():list() / client:Info0():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function XkcdComicsSDK:Info0(data)
   local EntityMod = require("entity.info0_entity")
   if data == nil then
     if self._info0 == nil then
@@ -253,12 +254,6 @@ function XkcdComicsSDK:info0(data)
     end
     return self._info0
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:info0() instead.
-function XkcdComicsSDK:Info0(data)
-  local EntityMod = require("entity.info0_entity")
   return EntityMod.new(self, data)
 end
 

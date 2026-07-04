@@ -204,14 +204,7 @@ class XkcdComicsSDK {
 
 
 
-  _info0?: Info0Entity
-
-  // Idiomatic facade: `client.info0.list()` / `client.info0.load({ id })`.
-  get info0(): Info0Entity {
-    return (this._info0 ??= new Info0Entity(this, undefined))
-  }
-
-  /** @deprecated Use `client.info0` instead. */
+  // Entity access: `client.Info0().list()` / `client.Info0().load({ id })`.
   Info0(data?: any) {
     const self = this
     return new Info0Entity(self,data)

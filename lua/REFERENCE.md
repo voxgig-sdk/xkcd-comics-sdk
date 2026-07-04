@@ -83,7 +83,7 @@ same parameters as `direct()`.
 ## Info0Entity
 
 ```lua
-local info0 = client:info0(nil)
+local info0 = client:Info0(nil)
 ```
 
 ### Fields
@@ -109,7 +109,7 @@ local info0 = client:info0(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:info0():load({ id = "info0_id" })
+local result, err = client:Info0():load({ id = "info0_id" })
 ```
 
 ### Common Methods

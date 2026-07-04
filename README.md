@@ -26,9 +26,9 @@ import { XkcdComicsSDK } from '@voxgig-sdk/xkcd-comics'
 
 const client = new XkcdComicsSDK()
 
-// Load info0 data
-const info0 = await client.info0.load({})
-console.log(info0.data)
+// Load info0 data (returns a Info0)
+const info0 = await client.Info0().load()
+console.log(info0)
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -84,8 +84,8 @@ from xkcdcomics_sdk import XkcdComicsSDK
 client = XkcdComicsSDK()
 
 
-# Load a specific info0
-info0 = client.info0.load({"id": "example_id"})
+# Load a specific info0 (returns the record, raises on error)
+info0 = client.Info0().load({"id": "example_id"})
 print(info0)
 ```
 
@@ -98,8 +98,8 @@ require_once 'xkcdcomics_sdk.php';
 $client = new XkcdComicsSDK();
 
 
-// Load a specific info0
-$info0 = $client->info0()->load(["id" => "example_id"]);
+// Load a specific info0 (returns the bare record; throws on error)
+$info0 = $client->Info0()->load(["id" => "example_id"]);
 print_r($info0);
 ```
 
@@ -123,8 +123,8 @@ require_relative "XkcdComics_sdk"
 client = XkcdComicsSDK.new
 
 
-# Load a specific info0
-info0 = client.info0.load({ "id" => "example_id" })
+# Load a specific info0 (returns the bare record; raises on error)
+info0 = client.Info0.load({ "id" => "example_id" })
 puts info0
 ```
 
@@ -137,7 +137,7 @@ local client = sdk.new()
 
 
 -- Load a specific info0
-local info0, err = client:info0():load({ id = "example_id" })
+local info0, err = client:Info0():load({ id = "example_id" })
 print(info0)
 ```
 
@@ -150,22 +150,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = XkcdComicsSDK.test()
-const result = await client.info0.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const info0 = await client.Info0().load({ id: 'test01' })
+// info0 is a bare Info0 populated with mock data
+console.log(info0)
 ```
 
 ### Python
 
 ```python
 client = XkcdComicsSDK.test()
-result = client.info0.load({"id": "test01"})
+info0 = client.Info0().load({"id": "test01"})
+print(info0)
 ```
 
 ### PHP
 
 ```php
-$client = XkcdComicsSDK::test();
-$result = $client->info0()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = XkcdComicsSDK::test([
+    "entity" => ["info0" => ["test01" => ["id" => "test01"]]],
+]);
+$info0 = $client->Info0()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -180,15 +185,18 @@ result, err := client.Info0(nil).Load(
 ### Ruby
 
 ```ruby
-client = XkcdComicsSDK.test
-result = client.info0.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = XkcdComicsSDK.test({
+  "entity" => { "info0" => { "test01" => { "id" => "test01" } } },
+})
+info0 = client.Info0.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:info0():load({ id = "test01" })
+local result, err = client:Info0():load({ id = "test01" })
 ```
 
 ## How it works
@@ -236,6 +244,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

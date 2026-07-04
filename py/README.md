@@ -33,10 +33,12 @@ client = XkcdComicsSDK()
 
 ### 3. Load an info0
 
+`load()` returns the bare record (a `dict`) and raises on error.
+
 ```python
 try:
-    result = client.info0.load({"id": "example_id"})
-    print(result)
+    info0 = client.Info0().load({"id": "example_id"})
+    print(info0)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -84,8 +86,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = XkcdComicsSDK.test()
 
-result = client.info0.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+info0 = client.Info0().load({"id": "test01"})
+# info0 contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -161,7 +164,7 @@ Creates a test-mode client with mock transport. Both arguments may be `None`.
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
 | `prepare` | `(fetchargs) -> dict` | Build an HTTP request definition without sending. Raises on error. |
 | `direct` | `(fetchargs) -> dict` | Build and send an HTTP request. Returns a result dict (branch on `ok`). |
-| `Info0` | `(data) -> Info0Entity` | Create a Info0 entity instance. |
+| `Info0` | `(data) -> Info0Entity` | Create an Info0 entity instance. |
 
 ### Entity interface
 
@@ -228,7 +231,7 @@ API path: `/{comic_id}/info.0.json`
 
 ### Info0
 
-Create an instance: `const info0 = client.info0`
+Create an instance: `info0 = client.Info0()`
 
 #### Operations
 
@@ -254,8 +257,8 @@ Create an instance: `const info0 = client.info0`
 
 #### Example: Load
 
-```ts
-const info0 = await client.info0.load({ id: 'info0_id' })
+```python
+info0 = client.Info0().load({"id": "info0_id"})
 ```
 
 
@@ -329,7 +332,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-info0 = client.info0
+info0 = client.Info0()
 info0.load({"id": "example_id"})
 
 # info0.data_get() now returns the loaded info0 data

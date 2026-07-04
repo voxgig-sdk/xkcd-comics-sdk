@@ -220,25 +220,15 @@ class XkcdComicsSDK:
         }
 
 
-    @property
-    def info0(self):
-        """Idiomatic facade: client.info0.list() / client.info0.load({"id": ...})."""
-        from entity.info0_entity import Info0Entity
-        cached = getattr(self, "_info0", None)
-        if cached is None:
-            cached = Info0Entity(self, None)
-            self._info0 = cached
-        return cached
-
-    def Info0(self, data=None):
-        # Deprecated: use client.info0 instead.
+    def Info0(self, data=None) -> "Info0Entity":
+        """Entity factory: client.Info0().list({}) / client.Info0().load({"id": ...})."""
         from entity.info0_entity import Info0Entity
         return Info0Entity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "XkcdComicsSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -258,3 +248,9 @@ class XkcdComicsSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.info0_entity import Info0Entity

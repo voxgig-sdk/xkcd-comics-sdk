@@ -208,13 +208,7 @@ class XkcdComicsSDK
   end
 
 
-  # Idiomatic facade: client.info0.list / client.info0.load({ "id" => ... })
-  def info0
-    require_relative 'entity/info0_entity'
-    @info0 ||= Info0Entity.new(self, nil)
-  end
-
-  # Deprecated: use client.info0 instead.
+  # Canonical facade: client.Info0.list / client.Info0.load({ "id" => ... })
   def Info0(data = nil)
     require_relative 'entity/info0_entity'
     Info0Entity.new(self, data)

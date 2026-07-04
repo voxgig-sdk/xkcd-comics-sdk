@@ -86,7 +86,7 @@ same parameters as `direct()`. Raises on error.
 ## Info0Entity
 
 ```ruby
-info0 = client.info0
+info0 = client.Info0
 ```
 
 ### Fields
@@ -112,7 +112,7 @@ info0 = client.info0
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.info0.load({ "id" => "info0_id" })
+result = client.Info0.load({ "id" => "info0_id" })
 ```
 
 ### Common Methods

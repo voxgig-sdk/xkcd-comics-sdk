@@ -233,10 +233,10 @@ class XkcdComicsSDK
 
     private $_info0 = null;
 
-    // Idiomatic facade: $client->info0()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Info0() (PHP method
-    // names are case-insensitive).
-    public function info0($data = null)
+    // Canonical facade: $client->Info0()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->info0()
+    // resolves here too.
+    public function Info0($data = null)
     {
         require_once __DIR__ . '/entity/info0_entity.php';
         if ($data === null) {
