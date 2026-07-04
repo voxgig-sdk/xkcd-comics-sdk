@@ -38,10 +38,6 @@ class Config {
   options = {
     base: 'https://xkcd.com',
 
-    auth: {
-      prefix: 'Bearer',
-    },
-
     headers: {
       "content-type": "application/json"
     },
@@ -153,7 +149,8 @@ class Config {
                     "name": "comic_id",
                     "orig": "comic_id",
                     "reqd": true,
-                    "type": "`$INTEGER`"
+                    "type": "`$INTEGER`",
+                    "index$": 0
                   }
                 ]
               },

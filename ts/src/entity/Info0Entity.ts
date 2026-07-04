@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Info0,
+  Info0LoadMatch,
+} from '../XkcdComicsTypes'
 
 // TODO: needs Entity superclass
-class Info0Entity extends XkcdComicsEntityBase {
+class Info0Entity extends XkcdComicsEntityBase<Info0> {
 
   constructor(client: XkcdComicsSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class Info0Entity extends XkcdComicsEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: Info0LoadMatch, ctrl?: Control): Promise<Info0> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class Info0Entity extends XkcdComicsEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Info0> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

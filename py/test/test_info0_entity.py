@@ -49,8 +49,7 @@ class TestInfo0Entity:
         # LOAD
         info0_ref01_ent = client.Info0(None)
         info0_ref01_match_dt0 = {}
-        info0_ref01_data_dt0_loaded, err = info0_ref01_ent.load(info0_ref01_match_dt0, None)
-        assert err is None
+        info0_ref01_data_dt0_loaded = info0_ref01_ent.load(info0_ref01_match_dt0, None)
         assert info0_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _info0_basic_setup(extra):
         "XKCDCOMICS_TEST_INFO__ENTID": idmap,
         "XKCDCOMICS_TEST_LIVE": "FALSE",
         "XKCDCOMICS_TEST_EXPLAIN": "FALSE",
-        "XKCDCOMICS_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _info0_basic_setup(extra):
     if env.get("XKCDCOMICS_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("XKCDCOMICS_APIKEY"),
             },
             extra or {},
         ])

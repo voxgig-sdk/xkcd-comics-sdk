@@ -110,14 +110,12 @@ func info0DirectSetup(mockres any) *info0DirectSetupResult {
 	env := envOverride(map[string]any{
 		"XKCDCOMICS_TEST_INFO__ENTID": map[string]any{},
 		"XKCDCOMICS_TEST_LIVE":    "FALSE",
-		"XKCDCOMICS_APIKEY":       "NONE",
 	})
 
 	live := env["XKCDCOMICS_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["XKCDCOMICS_APIKEY"],
 		}
 		client := sdk.NewXkcdComicsSDK(mergedOpts)
 

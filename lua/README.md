@@ -9,12 +9,9 @@ The Lua SDK for the XkcdComics API — an entity-oriented client using Lua conve
 
 
 ## Install
-```bash
-luarocks install voxgig-sdk-xkcd-comics
-```
-
-If the module is not yet published, add the source directory to
-your `LUA_PATH`:
+This package is not yet published to LuaRocks. Install it from the
+GitHub release tag (`lua/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/xkcd-comics-sdk/releases)),
+or add the source directory to your `LUA_PATH`:
 
 ```bash
 export LUA_PATH="path/to/lua/?.lua;path/to/lua/?/init.lua;;"
@@ -31,15 +28,13 @@ loading a specific record.
 ```lua
 local sdk = require("xkcd-comics_sdk")
 
-local client = sdk.new({
-  apikey = os.getenv("XKCD-COMICS_APIKEY"),
-})
+local client = sdk.new()
 ```
 
-### 3. Load a info0
+### 3. Load an info0
 
 ```lua
-local result, err = client:Info0():load({ id = "example_id" })
+local result, err = client:info0():load({ id = "example_id" })
 if err then error(err) end
 print(result)
 ```
@@ -87,7 +82,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:XkcdComics():load({ id = "test01" })
+local result, err = client:info0():load({ id = "test01" })
 -- result contains mock response data
 ```
 
@@ -120,8 +115,7 @@ local client = sdk.new({
 Create a `.env.local` file at the project root:
 
 ```
-XKCD-COMICS_TEST_LIVE=TRUE
-XKCD-COMICS_APIKEY=<your-key>
+XKCD_COMICS_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -144,7 +138,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -231,7 +224,7 @@ API path: `/{comic_id}/info.0.json`
 
 ### Info0
 
-Create an instance: `const info0 = client.Info0()`
+Create an instance: `const info0 = client.info0`
 
 #### Operations
 
@@ -258,7 +251,7 @@ Create an instance: `const info0 = client.Info0()`
 #### Example: Load
 
 ```ts
-const info0 = await client.Info0().load({ id: 'info0_id' })
+const info0 = await client.info0.load({ id: 'info0_id' })
 ```
 
 
@@ -333,11 +326,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local moon = client:Moon(nil)
-moon:load({ planet_id = "earth", id = "luna" }, nil)
+local info0 = client:info0()
+info0:load({ id = "example_id" })
 
--- moon:data_get() now returns the loaded moon data
--- moon:match_get() returns the last match criteria
+-- info0:data_get() now returns the loaded info0 data
+-- info0:match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

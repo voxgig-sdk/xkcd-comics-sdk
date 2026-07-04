@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -110,7 +109,7 @@ Alias for `XkcdComicsSDK.test()`.
 ## Info0Entity
 
 ```ts
-const info0 = client.Info0()
+const info0 = client.info0
 ```
 
 ### Fields
@@ -136,7 +135,7 @@ const info0 = client.Info0()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Info0().load({ id: 'info0_id' })
+const result = await client.info0.load({ id: 'info0_id' })
 ```
 
 ### Common Methods

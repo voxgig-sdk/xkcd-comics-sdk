@@ -244,6 +244,19 @@ end
 
 
 
+-- Idiomatic facade: client:info0():list() / client:info0():load({ id = ... })
+function XkcdComicsSDK:info0(data)
+  local EntityMod = require("entity.info0_entity")
+  if data == nil then
+    if self._info0 == nil then
+      self._info0 = EntityMod.new(self, nil)
+    end
+    return self._info0
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:info0() instead.
 function XkcdComicsSDK:Info0(data)
   local EntityMod = require("entity.info0_entity")
   return EntityMod.new(self, data)

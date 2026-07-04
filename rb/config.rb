@@ -15,9 +15,6 @@ module XkcdComicsConfig
       },
       "options" => {
         "base" => "https://xkcd.com",
-        "auth" => {
-          "prefix" => "Bearer",
-        },
         "headers" => {
           "content-type" => "application/json",
         },
@@ -124,6 +121,7 @@ module XkcdComicsConfig
                         "orig" => "comic_id",
                         "reqd" => true,
                         "type" => "`$INTEGER`",
+                        "index$" => 0,
                       },
                     ],
                   },

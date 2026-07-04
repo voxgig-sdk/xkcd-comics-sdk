@@ -9,9 +9,12 @@ The TypeScript SDK for the XkcdComics API — a type-safe, entity-oriented clien
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/xkcd-comics
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/xkcd-comics-sdk/releases](https://github.com/voxgig-sdk/xkcd-comics-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,17 +23,15 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { XkcdComicsSDK } from 'xkcd-comics'
+import { XkcdComicsSDK } from '@voxgig-sdk/xkcd-comics'
 
-const client = new XkcdComicsSDK({
-  apikey: process.env.XKCD-COMICS_APIKEY,
-})
+const client = new XkcdComicsSDK()
 ```
 
-### 3. Load a info0
+### 3. Load an info0
 
 ```ts
-const result = await client.Info0().load({ id: 'example_id' })
+const result = await client.info0.load({ id: 'example_id' })
 
 if (result.ok) {
   console.log(result.data)
@@ -79,7 +80,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = XkcdComicsSDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.info0.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -87,7 +88,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new XkcdComicsSDK({ apikey: '...' })
+const client = new XkcdComicsSDK()
 const testClient = client.tester()
 ```
 
@@ -96,7 +97,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.info0
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -123,7 +124,6 @@ const logger = {
 }
 
 const client = new XkcdComicsSDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -133,8 +133,7 @@ const client = new XkcdComicsSDK({
 Create a `.env.local` file at the project root:
 
 ```
-XKCD-COMICS_TEST_LIVE=TRUE
-XKCD-COMICS_APIKEY=<your-key>
+XKCD_COMICS_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -152,7 +151,6 @@ cd ts && npm test
 
 ```ts
 new XkcdComicsSDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -163,7 +161,6 @@ new XkcdComicsSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -276,7 +273,7 @@ API path: `/{comic_id}/info.0.json`
 
 ### Info0
 
-Create an instance: `const info0 = client.Info0()`
+Create an instance: `const info0 = client.info0`
 
 #### Operations
 
@@ -303,7 +300,7 @@ Create an instance: `const info0 = client.Info0()`
 #### Example: Load
 
 ```ts
-const info0 = await client.Info0().load({ id: 'info0_id' })
+const info0 = await client.info0.load({ id: 'info0_id' })
 ```
 
 
@@ -364,7 +361,7 @@ xkcd-comics/
 Import the SDK from the package root:
 
 ```ts
-import { XkcdComicsSDK } from 'xkcd-comics'
+import { XkcdComicsSDK } from '@voxgig-sdk/xkcd-comics'
 ```
 
 ### Entity state
@@ -374,11 +371,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const info0 = client.info0
+await info0.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// info0.data() now returns the loaded info0 data
+// info0.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

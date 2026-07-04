@@ -245,6 +245,9 @@ func (sdk *XkcdComicsSDK) Direct(fetchargs map[string]any) (map[string]any, erro
 }
 
 
+// Info0 returns a Info0 entity bound to this client.
+// Idiomatic usage: client.Info0(nil).List(nil, nil) or
+// client.Info0(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *XkcdComicsSDK) Info0(data map[string]any) XkcdComicsEntity {
 	return NewInfo0EntityFunc(sdk, data)
 }

@@ -117,7 +117,6 @@ func info0BasicSetup(extra map[string]any) *entityTestSetup {
 		"XKCDCOMICS_TEST_INFO__ENTID": idmap,
 		"XKCDCOMICS_TEST_LIVE":      "FALSE",
 		"XKCDCOMICS_TEST_EXPLAIN":   "FALSE",
-		"XKCDCOMICS_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["XKCDCOMICS_TEST_INFO__ENTID"])
@@ -128,7 +127,6 @@ func info0BasicSetup(extra map[string]any) *entityTestSetup {
 	if env["XKCDCOMICS_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["XKCDCOMICS_APIKEY"],
 			},
 			extra,
 		})

@@ -19,7 +19,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `table` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -84,7 +83,7 @@ same parameters as `direct()`.
 ## Info0Entity
 
 ```lua
-local info0 = client:Info0(nil)
+local info0 = client:info0(nil)
 ```
 
 ### Fields
@@ -110,7 +109,7 @@ local info0 = client:Info0(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Info0():load({ id = "info0_id" })
+local result, err = client:info0():load({ id = "info0_id" })
 ```
 
 ### Common Methods

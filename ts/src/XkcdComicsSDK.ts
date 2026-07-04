@@ -2,6 +2,8 @@
 
 import { Info0Entity } from './entity/Info0Entity'
 
+export type * from './XkcdComicsTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -202,6 +204,14 @@ class XkcdComicsSDK {
 
 
 
+  _info0?: Info0Entity
+
+  // Idiomatic facade: `client.info0.list()` / `client.info0.load({ id })`.
+  get info0(): Info0Entity {
+    return (this._info0 ??= new Info0Entity(this, undefined))
+  }
+
+  /** @deprecated Use `client.info0` instead. */
   Info0(data?: any) {
     const self = this
     return new Info0Entity(self,data)

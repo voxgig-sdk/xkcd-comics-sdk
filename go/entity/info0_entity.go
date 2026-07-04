@@ -85,6 +85,27 @@ func (e *Info0Entity) Match(args ...any) any {
 	return out
 }
 
+// DataTyped is the statically-typed accessor for this entity's data. With no
+// argument it returns the current data as an Info0; with an argument it
+// sets the data and returns the stored value. It delegates to the untyped Data
+// (identical runtime) and converts at the typed boundary.
+func (e *Info0Entity) DataTyped(data ...Info0) Info0 {
+	if len(data) > 0 {
+		return typedFrom[Info0](e.Data(asMap(data[0])))
+	}
+	return typedFrom[Info0](e.Data())
+}
+
+// MatchTyped mirrors DataTyped for the entity's match filter. The match is a
+// partial of the entity, so it round-trips through Info0 (all fields
+// optional at the wire level).
+func (e *Info0Entity) MatchTyped(match ...Info0) Info0 {
+	if len(match) > 0 {
+		return typedFrom[Info0](e.Match(asMap(match[0])))
+	}
+	return typedFrom[Info0](e.Match())
+}
+
 
 func (e *Info0Entity) Load(reqmatch map[string]any, ctrl map[string]any) (any, error) {
 	utility := e.utility
@@ -109,6 +130,17 @@ func (e *Info0Entity) Load(reqmatch map[string]any, ctrl map[string]any) (any, e
 			}
 		}
 	})
+}
+
+// LoadTyped is the statically-typed variant of Load: it takes an
+// Info0LoadMatch and returns an Info0. It delegates to the untyped
+// Load (identical runtime) and converts at the typed boundary.
+func (e *Info0Entity) LoadTyped(reqmatch Info0LoadMatch, ctrl map[string]any) (Info0, error) {
+	res, err := e.Load(asMap(reqmatch), ctrl)
+	if err != nil {
+		return Info0{}, err
+	}
+	return typedFrom[Info0](res), nil
 }
 
 
