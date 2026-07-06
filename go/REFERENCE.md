@@ -97,17 +97,17 @@ info0 := client.Info0(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `alt` | ``$STRING`` | No |  |
-| `day` | ``$STRING`` | Yes |  |
-| `img` | ``$STRING`` | Yes |  |
-| `link` | ``$STRING`` | No |  |
-| `month` | ``$STRING`` | Yes |  |
-| `new` | ``$STRING`` | No |  |
-| `num` | ``$INTEGER`` | Yes |  |
-| `safe_title` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | Yes |  |
-| `transcript` | ``$STRING`` | No |  |
-| `year` | ``$STRING`` | Yes |  |
+| `alt` | `string` | No |  |
+| `day` | `string` | Yes |  |
+| `img` | `string` | Yes |  |
+| `link` | `string` | No |  |
+| `month` | `string` | Yes |  |
+| `new` | `string` | No |  |
+| `num` | `int` | Yes |  |
+| `safe_title` | `string` | No |  |
+| `title` | `string` | Yes |  |
+| `transcript` | `string` | No |  |
+| `year` | `string` | Yes |  |
 
 ### Operations
 
@@ -116,7 +116,7 @@ info0 := client.Info0(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Info0(nil).Load(map[string]any{"id": "info0_id"}, nil)
+result, err := client.Info0(nil).Load(nil, nil)
 ```
 
 ### Common Methods

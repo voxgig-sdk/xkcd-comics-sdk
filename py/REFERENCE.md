@@ -8,7 +8,7 @@ Complete API reference for the XkcdComics Python SDK.
 ### Constructor
 
 ```python
-from xkcd-comics_sdk import XkcdComicsSDK
+from xkcdcomics_sdk import XkcdComicsSDK
 
 client = XkcdComicsSDK(options)
 ```
@@ -87,17 +87,17 @@ info0 = client.Info0()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `alt` | ``$STRING`` | No |  |
-| `day` | ``$STRING`` | Yes |  |
-| `img` | ``$STRING`` | Yes |  |
-| `link` | ``$STRING`` | No |  |
-| `month` | ``$STRING`` | Yes |  |
-| `new` | ``$STRING`` | No |  |
-| `num` | ``$INTEGER`` | Yes |  |
-| `safe_title` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | Yes |  |
-| `transcript` | ``$STRING`` | No |  |
-| `year` | ``$STRING`` | Yes |  |
+| `alt` | `str` | No |  |
+| `day` | `str` | Yes |  |
+| `img` | `str` | Yes |  |
+| `link` | `str` | No |  |
+| `month` | `str` | Yes |  |
+| `new` | `str` | No |  |
+| `num` | `int` | Yes |  |
+| `safe_title` | `str` | No |  |
+| `title` | `str` | Yes |  |
+| `transcript` | `str` | No |  |
+| `year` | `str` | Yes |  |
 
 ### Operations
 
@@ -106,7 +106,7 @@ info0 = client.Info0()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Info0().load({"id": "info0_id"})
+result = client.Info0().load()
 ```
 
 ### Common Methods

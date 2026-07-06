@@ -90,17 +90,17 @@ local info0 = client:Info0(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `alt` | ``$STRING`` | No |  |
-| `day` | ``$STRING`` | Yes |  |
-| `img` | ``$STRING`` | Yes |  |
-| `link` | ``$STRING`` | No |  |
-| `month` | ``$STRING`` | Yes |  |
-| `new` | ``$STRING`` | No |  |
-| `num` | ``$INTEGER`` | Yes |  |
-| `safe_title` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | Yes |  |
-| `transcript` | ``$STRING`` | No |  |
-| `year` | ``$STRING`` | Yes |  |
+| `alt` | `string` | No |  |
+| `day` | `string` | Yes |  |
+| `img` | `string` | Yes |  |
+| `link` | `string` | No |  |
+| `month` | `string` | Yes |  |
+| `new` | `string` | No |  |
+| `num` | `number` | Yes |  |
+| `safe_title` | `string` | No |  |
+| `title` | `string` | Yes |  |
+| `transcript` | `string` | No |  |
+| `year` | `string` | Yes |  |
 
 ### Operations
 
@@ -109,7 +109,7 @@ local info0 = client:Info0(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Info0():load({ id = "info0_id" })
+local result, err = client:Info0():load()
 ```
 
 ### Common Methods

@@ -8,7 +8,7 @@ Complete API reference for the XkcdComics Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'xkcd-comics_sdk'
+require_relative 'XkcdComics_sdk'
 
 client = XkcdComicsSDK.new(options)
 ```
@@ -93,17 +93,17 @@ info0 = client.Info0
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `alt` | ``$STRING`` | No |  |
-| `day` | ``$STRING`` | Yes |  |
-| `img` | ``$STRING`` | Yes |  |
-| `link` | ``$STRING`` | No |  |
-| `month` | ``$STRING`` | Yes |  |
-| `new` | ``$STRING`` | No |  |
-| `num` | ``$INTEGER`` | Yes |  |
-| `safe_title` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | Yes |  |
-| `transcript` | ``$STRING`` | No |  |
-| `year` | ``$STRING`` | Yes |  |
+| `alt` | `String` | No |  |
+| `day` | `String` | Yes |  |
+| `img` | `String` | Yes |  |
+| `link` | `String` | No |  |
+| `month` | `String` | Yes |  |
+| `new` | `String` | No |  |
+| `num` | `Integer` | Yes |  |
+| `safe_title` | `String` | No |  |
+| `title` | `String` | Yes |  |
+| `transcript` | `String` | No |  |
+| `year` | `String` | Yes |  |
 
 ### Operations
 
@@ -112,7 +112,7 @@ info0 = client.Info0
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Info0.load({ "id" => "info0_id" })
+result = client.Info0.load()
 ```
 
 ### Common Methods

@@ -8,7 +8,7 @@ Complete API reference for the XkcdComics PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/xkcd-comics_sdk.php';
+require_once __DIR__ . '/xkcdcomics_sdk.php';
 
 $client = new XkcdComicsSDK($options);
 ```
@@ -45,11 +45,11 @@ $client = XkcdComicsSDK::test();
 
 Create a new `Info0Entity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): XkcdComicsUtility`
 
 Return a copy of the SDK utility object.
 
@@ -92,17 +92,17 @@ $info0 = $client->Info0();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `alt` | ``$STRING`` | No |  |
-| `day` | ``$STRING`` | Yes |  |
-| `img` | ``$STRING`` | Yes |  |
-| `link` | ``$STRING`` | No |  |
-| `month` | ``$STRING`` | Yes |  |
-| `new` | ``$STRING`` | No |  |
-| `num` | ``$INTEGER`` | Yes |  |
-| `safe_title` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | Yes |  |
-| `transcript` | ``$STRING`` | No |  |
-| `year` | ``$STRING`` | Yes |  |
+| `alt` | `string` | No |  |
+| `day` | `string` | Yes |  |
+| `img` | `string` | Yes |  |
+| `link` | `string` | No |  |
+| `month` | `string` | Yes |  |
+| `new` | `string` | No |  |
+| `num` | `int` | Yes |  |
+| `safe_title` | `string` | No |  |
+| `title` | `string` | Yes |  |
+| `transcript` | `string` | No |  |
+| `year` | `string` | Yes |  |
 
 ### Operations
 
@@ -111,24 +111,24 @@ $info0 = $client->Info0();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Info0()->load(["id" => "info0_id"]);
+$result = $client->Info0()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -137,7 +137,7 @@ Set the entity match criteria.
 Create a new `Info0Entity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

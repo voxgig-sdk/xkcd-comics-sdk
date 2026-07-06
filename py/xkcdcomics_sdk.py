@@ -221,7 +221,7 @@ class XkcdComicsSDK:
 
 
     def Info0(self, data=None) -> "Info0Entity":
-        """Entity factory: client.Info0().list({}) / client.Info0().load({"id": ...})."""
+        """Entity factory: client.Info0().list() / client.Info0().load({"id": ...})."""
         from entity.info0_entity import Info0Entity
         return Info0Entity(self, data)
 
