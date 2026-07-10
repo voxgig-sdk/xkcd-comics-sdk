@@ -33,5 +33,5 @@ class Info0(Info0Required, total=False):
     transcript: str
 
 
-class Info0LoadMatch(TypedDict):
+class Info0LoadMatch(TypedDict, total=False):
     comic_id: int

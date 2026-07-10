@@ -15,9 +15,9 @@ main: {
           url: "https://xkcd.com"
         }
       ]
+      summary: "Fetch comics and metadata from XKCD website in JSON format."
       title: "XKCD Comics"
       version: "1.0.0"
+      website: "https://xkcd.com"
     }
   }
-}
-

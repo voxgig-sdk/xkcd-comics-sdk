@@ -25,7 +25,7 @@ type Info0 struct {
 
 // Info0LoadMatch is the typed request payload for Info0.LoadTyped.
 type Info0LoadMatch struct {
-	ComicId int `json:"comic_id"`
+	ComicId *int `json:"comic_id,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

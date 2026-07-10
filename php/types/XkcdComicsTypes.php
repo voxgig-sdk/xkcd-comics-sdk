@@ -31,6 +31,6 @@ class Info0
 /** Request payload for Info0#load. */
 class Info0LoadMatch
 {
-    public int $comic_id;
+    public ?int $comic_id = null;
 }
 

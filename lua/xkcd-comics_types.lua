@@ -20,7 +20,7 @@
 ---@field year string
 
 ---@class Info0LoadMatch
----@field comic_id number
+---@field comic_id? number
 
 local M = {}
 

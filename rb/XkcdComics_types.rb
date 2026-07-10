@@ -60,7 +60,7 @@ Info0 = Struct.new(
 # Request payload for Info0#load.
 #
 # @!attribute [rw] comic_id
-#   @return [Integer]
+#   @return [Integer, nil]
 Info0LoadMatch = Struct.new(
   :comic_id,
   keyword_init: true

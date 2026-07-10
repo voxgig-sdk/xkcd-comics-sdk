@@ -91,6 +91,7 @@ same parameters as `Direct()`.
 
 ```go
 info0 := client.Info0(nil)
+fmt.Println(info0.GetName()) // "info0"
 ```
 
 ### Fields
@@ -117,6 +118,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Info0(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods

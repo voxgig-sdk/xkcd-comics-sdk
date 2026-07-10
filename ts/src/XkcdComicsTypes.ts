@@ -20,6 +20,6 @@ export interface Info0 {
 }
 
 export interface Info0LoadMatch {
-  comic_id: number
+  comic_id?: number
 }
 

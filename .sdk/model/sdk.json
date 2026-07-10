@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -285,14 +282,17 @@
           "url": "https://xkcd.com/json.html"
         },
         "description": "Fetch comics and metadata from XKCD website in JSON format.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "XKCD Production Server",
             "url": "https://xkcd.com"
           }
         ],
+        "summary": "Fetch comics and metadata from XKCD website in JSON format.",
         "title": "XKCD Comics",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://xkcd.com"
       },
       "option": {},
       "target": {
@@ -345,6 +345,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -395,6 +398,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
