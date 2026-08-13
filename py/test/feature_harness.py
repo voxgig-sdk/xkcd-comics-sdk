@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import XkcdComicsControl
-from core.error import XkcdComicsError
-from core.result import XkcdComicsResult
-from core.spec import XkcdComicsSpec
+from xkcdcomics_sdk.config import make_config
+from xkcdcomics_sdk.features import _make_feature
+from xkcdcomics_sdk.core.control import XkcdComicsControl
+from xkcdcomics_sdk.core.error import XkcdComicsError
+from xkcdcomics_sdk.core.result import XkcdComicsResult
+from xkcdcomics_sdk.core.spec import XkcdComicsSpec
 
 
 # True when this SDK was generated with the named feature.

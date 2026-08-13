@@ -61,7 +61,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "new",
+            ["name"] = "news",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 5,
@@ -124,6 +124,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/{comic_id}/info.0.json",
                 ["parts"] = {
@@ -144,6 +145,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/info.0.json",
                 ["parts"] = {

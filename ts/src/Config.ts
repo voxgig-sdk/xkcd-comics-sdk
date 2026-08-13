@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'XkcdComics',
   }
 
 
@@ -91,7 +91,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "new",
+          "name": "news",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
@@ -154,6 +154,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/{comic_id}/info.0.json",
               "parts": [
@@ -174,6 +175,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/info.0.json",
               "parts": [

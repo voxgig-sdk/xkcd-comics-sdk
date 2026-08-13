@@ -68,11 +68,11 @@ function info0_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["XKCDCOMICS_TEST_INFO__ENTID"] = {},
-    ["XKCDCOMICS_TEST_LIVE"] = "FALSE",
+    ["XKCD_COMICS_TEST_INFO0_ENTID"] = {},
+    ["XKCD_COMICS_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["XKCDCOMICS_TEST_LIVE"] == "TRUE"
+  local live = env["XKCD_COMICS_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

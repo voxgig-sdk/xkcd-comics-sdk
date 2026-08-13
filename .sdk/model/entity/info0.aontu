@@ -31,7 +31,7 @@ main: kit: entity: info0: {
       type: "`$STRING`"
     }
     {
-      name: "new"
+      name: "news"
       req: false
       type: "`$STRING`"
     }

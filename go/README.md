@@ -263,7 +263,7 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | `"img"` |  |
 | `"link"` |  |
 | `"month"` |  |
-| `"new"` |  |
+| `"news"` |  |
 | `"num"` |  |
 | `"safe_title"` |  |
 | `"title"` |  |
@@ -298,7 +298,7 @@ Create an instance: `info0 := client.Info0(nil)`
 | `img` | `string` |  |
 | `link` | `string` |  |
 | `month` | `string` |  |
-| `new` | `string` |  |
+| `news` | `string` |  |
 | `num` | `int` |  |
 | `safe_title` | `string` |  |
 | `title` | `string` |  |

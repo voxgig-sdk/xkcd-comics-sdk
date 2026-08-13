@@ -92,7 +92,7 @@ info0 = client.Info0()
 | `img` | `str` | Yes |  |
 | `link` | `str` | No |  |
 | `month` | `str` | Yes |  |
-| `new` | `str` | No |  |
+| `news` | `str` | No |  |
 | `num` | `int` | Yes |  |
 | `safe_title` | `str` | No |  |
 | `title` | `str` | Yes |  |

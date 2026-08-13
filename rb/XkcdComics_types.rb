@@ -25,7 +25,7 @@
 # @!attribute [rw] month
 #   @return [String]
 #
-# @!attribute [rw] new
+# @!attribute [rw] news
 #   @return [String, nil]
 #
 # @!attribute [rw] num
@@ -48,7 +48,7 @@ Info0 = Struct.new(
   :img,
   :link,
   :month,
-  :new,
+  :news,
   :num,
   :safe_title,
   :title,

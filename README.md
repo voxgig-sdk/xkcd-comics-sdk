@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = XkcdComicsSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = XkcdComicsSDK.test({
+  entity: {
+    info0: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const info0 = await client.Info0().load()
-// info0 is a bare Info0 populated with mock data
+// info0 is the Info0 entity, populated with mock data
+// — call info0.data() for the record itself
 console.log(info0)
 ```
 
@@ -182,7 +191,7 @@ require_once 'xkcdcomics_sdk.php';
 $client = new XkcdComicsSDK();
 
 
-// Load a specific info0 (returns the bare record; throws on error)
+// Load a specific info0 (returns the ENTITY; call data_get() for the record; throws on error)
 $info0 = $client->Info0()->load();
 print_r($info0);
 ```
@@ -210,7 +219,7 @@ require_relative "XkcdComics_sdk"
 client = XkcdComicsSDK.new
 
 
-# Load a specific info0 (returns the bare record; raises on error)
+# Load a specific info0 (returns the ENTITY; call data_get for the record)
 info0 = client.Info0.load()
 puts info0
 ```
@@ -344,6 +353,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://xkcd.com/json.html](https://xkcd.com/json.html)
 

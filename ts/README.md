@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 const client = XkcdComicsSDK.test()
 
 const info0 = await client.Info0().load()
-// info0 is a bare entity populated with mock response data
+// info0 is the entity, populated with mock response data
+// — call info0.data() for the record itself
 console.log(info0)
 ```
 
@@ -289,7 +290,7 @@ The `prepare()` method returns:
 | `img` |  |
 | `link` |  |
 | `month` |  |
-| `new` |  |
+| `news` |  |
 | `num` |  |
 | `safe_title` |  |
 | `title` |  |
@@ -324,7 +325,7 @@ Create an instance: `const info0 = client.Info0()`
 | `img` | `string` |  |
 | `link` | `string` |  |
 | `month` | `string` |  |
-| `new` | `string` |  |
+| `news` | `string` |  |
 | `num` | `number` |  |
 | `safe_title` | `string` |  |
 | `title` | `string` |  |

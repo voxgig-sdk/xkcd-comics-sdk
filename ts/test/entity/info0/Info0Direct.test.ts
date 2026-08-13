@@ -19,11 +19,15 @@ import {
 describe('Info0Direct', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when XKCDCOMICS_TEST_LIVE=TRUE.
-  afterEach(liveDelay('XKCDCOMICS_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when XKCD_COMICS_TEST_LIVE=TRUE.
+  afterEach(liveDelay('XKCD_COMICS_TEST_LIVE'))
 
   test('direct-exists', async () => {
     const sdk = new XkcdComicsSDK({
+      // Concrete base: a live construction must satisfy any server
+      // variables a templated base URL declares; overriding base with a
+      // literal (as the direct flow tests do) sidesteps the requirement.
+      base: 'http://localhost:8080',
       system: { fetch: async () => ({}) }
     })
     assert('function' === typeof sdk.direct)
@@ -77,17 +81,17 @@ function directSetup(mockres?: any) {
   const calls: any[] = []
 
   const env = envOverride({
-    'XKCDCOMICS_TEST_INFO__ENTID': {},
-    'XKCDCOMICS_TEST_LIVE': 'FALSE',
+    'XKCD_COMICS_TEST_INFO0_ENTID': {},
+    'XKCD_COMICS_TEST_LIVE': 'FALSE',
   })
 
-  const live = 'TRUE' === env.XKCDCOMICS_TEST_LIVE
+  const live = 'TRUE' === env.XKCD_COMICS_TEST_LIVE
 
   if (live) {
     const client = new XkcdComicsSDK({
     })
 
-    let idmap: any = env['XKCDCOMICS_TEST_INFO__ENTID']
+    let idmap: any = env['XKCD_COMICS_TEST_INFO0_ENTID']
     if ('string' === typeof idmap && idmap.startsWith('{')) {
       idmap = JSON.parse(idmap)
     }

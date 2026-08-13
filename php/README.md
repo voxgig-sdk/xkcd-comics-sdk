@@ -35,7 +35,7 @@ $client = new XkcdComicsSDK();
 
 ```php
 try {
-    // load() returns the bare Info0 record (throws on error).
+    // load() returns the ENTITY — call data_get() for the Info0 record (throws on error).
     $info0 = $client->Info0()->load();
     print_r($info0);
 } catch (\Throwable $err) {
@@ -123,7 +123,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = XkcdComicsSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $info0 = $client->Info0()->load();
 print_r($info0);
 ```
@@ -222,7 +223,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -249,7 +250,7 @@ On error, `ok` is `false` and `$err` contains the error value.
 | `img` |  |
 | `link` |  |
 | `month` |  |
-| `new` |  |
+| `news` |  |
 | `num` |  |
 | `safe_title` |  |
 | `title` |  |
@@ -284,7 +285,7 @@ Create an instance: `$info0 = $client->Info0();`
 | `img` | `string` |  |
 | `link` | `string` |  |
 | `month` | `string` |  |
-| `new` | `string` |  |
+| `news` | `string` |  |
 | `num` | `int` |  |
 | `safe_title` | `string` |  |
 | `title` | `string` |  |
@@ -294,7 +295,7 @@ Create an instance: `$info0 = $client->Info0();`
 #### Example: Load
 
 ```php
-// load() returns the bare Info0 record (throws on error).
+// load() returns the ENTITY — call data_get() for the Info0 record (throws on error).
 $info0 = $client->Info0()->load();
 ```
 

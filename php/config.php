@@ -67,7 +67,7 @@ class XkcdComicsConfig
             ],
             [
               'active' => true,
-              'name' => 'new',
+              'name' => 'news',
               'req' => false,
               'type' => '`$STRING`',
               'index$' => 5,
@@ -130,6 +130,7 @@ class XkcdComicsConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/{comic_id}/info.0.json',
                   'parts' => [
@@ -150,6 +151,7 @@ class XkcdComicsConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/info.0.json',
                   'parts' => [

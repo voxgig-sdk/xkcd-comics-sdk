@@ -23,8 +23,8 @@ module XkcdComicsTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("XKCDCOMICS_TEST_LIVE")
-    override = getenv("XKCDCOMICS_TEST_OVERRIDE")
+    live = getenv("XKCD_COMICS_TEST_LIVE")
+    override = getenv("XKCD_COMICS_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module XkcdComicsTestRunner
       end
     end
 
-    explain = getenv("XKCDCOMICS_TEST_EXPLAIN")
-    m["XKCDCOMICS_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("XKCD_COMICS_TEST_EXPLAIN")
+    m["XKCD_COMICS_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

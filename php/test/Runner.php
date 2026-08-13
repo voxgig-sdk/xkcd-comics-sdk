@@ -43,8 +43,8 @@ class XkcdComicsTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('XKCDCOMICS_TEST_LIVE');
-        $override = self::getenv('XKCDCOMICS_TEST_OVERRIDE');
+        $live = self::getenv('XKCD_COMICS_TEST_LIVE');
+        $override = self::getenv('XKCD_COMICS_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class XkcdComicsTestRunner
             }
         }
 
-        $explain = self::getenv('XKCDCOMICS_TEST_EXPLAIN');
+        $explain = self::getenv('XKCD_COMICS_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['XKCDCOMICS_TEST_EXPLAIN'] = $explain;
+            $m['XKCD_COMICS_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

@@ -97,7 +97,7 @@ $info0 = $client->Info0();
 | `img` | `string` | Yes |  |
 | `link` | `string` | No |  |
 | `month` | `string` | Yes |  |
-| `new` | `string` | No |  |
+| `news` | `string` | No |  |
 | `num` | `int` | Yes |  |
 | `safe_title` | `string` | No |  |
 | `title` | `string` | Yes |  |

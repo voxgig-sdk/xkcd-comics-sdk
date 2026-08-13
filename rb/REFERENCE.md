@@ -98,7 +98,7 @@ info0 = client.Info0
 | `img` | `String` | Yes |  |
 | `link` | `String` | No |  |
 | `month` | `String` | Yes |  |
-| `new` | `String` | No |  |
+| `news` | `String` | No |  |
 | `num` | `Integer` | Yes |  |
 | `safe_title` | `String` | No |  |
 | `title` | `String` | Yes |  |

@@ -16,11 +16,11 @@
 import pytest
 
 from xkcdcomics_sdk import XkcdComicsSDK
-from core.error import XkcdComicsError
-from core.result import XkcdComicsResult
-from core.response import XkcdComicsResponse
-from core.spec import XkcdComicsSpec
-from feature.base_feature import XkcdComicsBaseFeature
+from xkcdcomics_sdk.core.error import XkcdComicsError
+from xkcdcomics_sdk.core.result import XkcdComicsResult
+from xkcdcomics_sdk.core.response import XkcdComicsResponse
+from xkcdcomics_sdk.core.spec import XkcdComicsSpec
+from xkcdcomics_sdk.feature.base_feature import XkcdComicsBaseFeature
 
 
 def _client():

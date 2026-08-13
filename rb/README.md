@@ -34,7 +34,7 @@ client = XkcdComicsSDK.new
 
 ```ruby
 begin
-  # load returns the bare Info0 record (raises on error).
+  # load returns the ENTITY — call data_get for the Info0 record (raises on error).
   info0 = client.Info0.load()
   puts info0
 rescue => err
@@ -117,7 +117,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = XkcdComicsSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 info0 = client.Info0.load()
 puts info0
 ```
@@ -239,7 +240,7 @@ returns a result `Hash` with these keys:
 | `img` |  |
 | `link` |  |
 | `month` |  |
-| `new` |  |
+| `news` |  |
 | `num` |  |
 | `safe_title` |  |
 | `title` |  |
@@ -274,7 +275,7 @@ Create an instance: `info0 = client.Info0`
 | `img` | `String` |  |
 | `link` | `String` |  |
 | `month` | `String` |  |
-| `new` | `String` |  |
+| `news` | `String` |  |
 | `num` | `Integer` |  |
 | `safe_title` | `String` |  |
 | `title` | `String` |  |
@@ -284,7 +285,7 @@ Create an instance: `info0 = client.Info0`
 #### Example: Load
 
 ```ruby
-# load returns the bare Info0 record (raises on error).
+# load returns the ENTITY — call data_get for the Info0 record (raises on error).
 info0 = client.Info0.load()
 ```
 

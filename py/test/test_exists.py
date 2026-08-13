@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# XkcdComics SDK exists test
 
 import pytest
 from xkcdcomics_sdk import XkcdComicsSDK

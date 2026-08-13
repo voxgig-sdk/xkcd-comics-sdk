@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from xkcdcomics_sdk.utility.voxgig_struct import voxgig_struct as vs
 from xkcdcomics_sdk import XkcdComicsSDK
-from core import helpers
+from xkcdcomics_sdk.core import helpers
 from test import runner
 
 
@@ -63,11 +63,11 @@ def _info0_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "XKCDCOMICS_TEST_INFO__ENTID": {},
-        "XKCDCOMICS_TEST_LIVE": "FALSE",
+        "XKCD_COMICS_TEST_INFO0_ENTID": {},
+        "XKCD_COMICS_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("XKCDCOMICS_TEST_LIVE") == "TRUE"
+    live = env.get("XKCD_COMICS_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

@@ -43,7 +43,8 @@ func TestInfo0Direct(t *testing.T) {
 		if setup.live {
 			// Live mode is lenient: synthetic IDs frequently 4xx. Skip
 			// rather than fail when the load endpoint isn't reachable with
-			// the IDs we can construct from setup.idmap.
+			// the IDs we can construct from setup.idmap — unless the model
+			// sets main.kit.test.live.strict.
 			if err != nil {
 				t.Skipf("load call failed (likely synthetic IDs against live API): %v", err)
 			}
@@ -108,11 +109,11 @@ func info0DirectSetup(mockres any) *info0DirectSetupResult {
 	calls := &[]map[string]any{}
 
 	env := envOverride(map[string]any{
-		"XKCDCOMICS_TEST_INFO__ENTID": map[string]any{},
-		"XKCDCOMICS_TEST_LIVE":    "FALSE",
+		"XKCD_COMICS_TEST_INFO0_ENTID": map[string]any{},
+		"XKCD_COMICS_TEST_LIVE":    "FALSE",
 	})
 
-	live := env["XKCDCOMICS_TEST_LIVE"] == "TRUE"
+	live := env["XKCD_COMICS_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
@@ -120,7 +121,7 @@ func info0DirectSetup(mockres any) *info0DirectSetupResult {
 		client := sdk.NewXkcdComicsSDK(mergedOpts)
 
 		idmap := map[string]any{}
-		if entidRaw, ok := env["XKCDCOMICS_TEST_INFO__ENTID"]; ok {
+		if entidRaw, ok := env["XKCD_COMICS_TEST_INFO0_ENTID"]; ok {
 			if entidStr, ok := entidRaw.(string); ok && strings.HasPrefix(entidStr, "{") {
 				json.Unmarshal([]byte(entidStr), &idmap)
 			} else if entidMap, ok := entidRaw.(map[string]any); ok {

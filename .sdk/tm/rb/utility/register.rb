@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ XkcdComicsUtility.registrar = ->(u) {
   u.prepare_params = XkcdComicsUtilities::PrepareParams
   u.prepare_path = XkcdComicsUtilities::PreparePath
   u.prepare_query = XkcdComicsUtilities::PrepareQuery
+  u.graphql_body = XkcdComicsUtilities::GraphqlBody
+  u.graphql_errors = XkcdComicsUtilities::GraphqlErrors
   u.result_basic = XkcdComicsUtilities::ResultBasic
   u.result_body = XkcdComicsUtilities::ResultBody
   u.result_headers = XkcdComicsUtilities::ResultHeaders

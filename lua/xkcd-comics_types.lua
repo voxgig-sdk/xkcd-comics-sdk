@@ -12,7 +12,7 @@
 ---@field img string
 ---@field link? string
 ---@field month string
----@field new? string
+---@field news? string
 ---@field num number
 ---@field safe_title? string
 ---@field title string

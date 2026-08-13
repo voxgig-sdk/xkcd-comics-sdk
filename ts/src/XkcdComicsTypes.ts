@@ -11,7 +11,7 @@ export interface Info0 {
   img: string
   link?: string
   month: string
-  new?: string
+  news?: string
   num: number
   safe_title?: string
   title: string

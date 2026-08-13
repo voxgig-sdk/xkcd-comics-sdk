@@ -20,7 +20,7 @@ class Info0
     public string $img;
     public ?string $link = null;
     public string $month;
-    public ?string $new = null;
+    public ?string $news = null;
     public int $num;
     public ?string $safe_title = null;
     public string $title;

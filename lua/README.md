@@ -230,7 +230,7 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | `img` |  |
 | `link` |  |
 | `month` |  |
-| `new` |  |
+| `news` |  |
 | `num` |  |
 | `safe_title` |  |
 | `title` |  |
@@ -265,7 +265,7 @@ Create an instance: `local info0 = client:Info0(nil)`
 | `img` | `string` |  |
 | `link` | `string` |  |
 | `month` | `string` |  |
-| `new` | `string` |  |
+| `news` | `string` |  |
 | `num` | `number` |  |
 | `safe_title` | `string` |  |
 | `title` | `string` |  |
