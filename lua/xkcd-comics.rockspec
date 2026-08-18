@@ -23,6 +23,7 @@ build = {
   modules = {
     ["xkcd-comics_sdk"] = "xkcd-comics_sdk.lua",
     ["config"] = "config.lua",
+    ["config_shared"] = "config_shared.lua",
     ["features"] = "features.lua",
   }
 }

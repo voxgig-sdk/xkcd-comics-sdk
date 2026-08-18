@@ -31,6 +31,16 @@ class Info0
 /** Request payload for Info0#load. */
 class Info0LoadMatch
 {
-    public ?int $comic_id = null;
+    public ?string $alt = null;
+    public ?string $day = null;
+    public ?string $img = null;
+    public ?string $link = null;
+    public ?string $month = null;
+    public ?string $news = null;
+    public ?int $num = null;
+    public ?string $safe_title = null;
+    public ?string $title = null;
+    public ?string $transcript = null;
+    public ?string $year = null;
 }
 

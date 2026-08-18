@@ -28,7 +28,7 @@ class XkcdComicsSDK
     utility = XkcdComicsUtility.new
     @_utility = utility
 
-    config = XkcdComicsConfig.make_config
+    config = XkcdComicsConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

@@ -34,4 +34,14 @@ class Info0(Info0Required, total=False):
 
 
 class Info0LoadMatch(TypedDict, total=False):
-    comic_id: int
+    alt: str
+    day: str
+    img: str
+    link: str
+    month: str
+    news: str
+    num: int
+    safe_title: str
+    title: str
+    transcript: str
+    year: str

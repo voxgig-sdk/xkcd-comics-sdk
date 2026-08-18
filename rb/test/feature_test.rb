@@ -15,7 +15,7 @@ require_relative "../XkcdComics_sdk"
 module XkcdComicsFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = XkcdComicsConfig.make_config["feature"]
+    f = XkcdComicsConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

@@ -20,7 +20,17 @@
 ---@field year string
 
 ---@class Info0LoadMatch
----@field comic_id? number
+---@field alt? string
+---@field day? string
+---@field img? string
+---@field link? string
+---@field month? string
+---@field news? string
+---@field num? number
+---@field safe_title? string
+---@field title? string
+---@field transcript? string
+---@field year? string
 
 local M = {}
 

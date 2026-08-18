@@ -59,10 +59,50 @@ Info0 = Struct.new(
 
 # Request payload for Info0#load.
 #
-# @!attribute [rw] comic_id
+# @!attribute [rw] alt
+#   @return [String, nil]
+#
+# @!attribute [rw] day
+#   @return [String, nil]
+#
+# @!attribute [rw] img
+#   @return [String, nil]
+#
+# @!attribute [rw] link
+#   @return [String, nil]
+#
+# @!attribute [rw] month
+#   @return [String, nil]
+#
+# @!attribute [rw] news
+#   @return [String, nil]
+#
+# @!attribute [rw] num
 #   @return [Integer, nil]
+#
+# @!attribute [rw] safe_title
+#   @return [String, nil]
+#
+# @!attribute [rw] title
+#   @return [String, nil]
+#
+# @!attribute [rw] transcript
+#   @return [String, nil]
+#
+# @!attribute [rw] year
+#   @return [String, nil]
 Info0LoadMatch = Struct.new(
-  :comic_id,
+  :alt,
+  :day,
+  :img,
+  :link,
+  :month,
+  :news,
+  :num,
+  :safe_title,
+  :title,
+  :transcript,
+  :year,
   keyword_init: true
 )
 

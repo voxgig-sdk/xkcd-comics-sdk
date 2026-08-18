@@ -40,7 +40,7 @@ class XkcdComicsSDK
         $utility = new XkcdComicsUtility();
         $this->_utility = $utility;
 
-        $config = XkcdComicsConfig::make_config();
+        $config = XkcdComicsConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

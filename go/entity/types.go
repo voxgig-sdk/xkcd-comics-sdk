@@ -29,7 +29,17 @@ type Info0 struct {
 
 // Info0LoadMatch is the typed request payload for Info0.LoadTyped.
 type Info0LoadMatch struct {
-	ComicId *int `json:"comic_id,omitempty"`
+	Alt *string `json:"alt,omitempty"`
+	Day *string `json:"day,omitempty"`
+	Img *string `json:"img,omitempty"`
+	Link *string `json:"link,omitempty"`
+	Month *string `json:"month,omitempty"`
+	News *string `json:"news,omitempty"`
+	Num *int `json:"num,omitempty"`
+	SafeTitle *string `json:"safe_title,omitempty"`
+	Title *string `json:"title,omitempty"`
+	Transcript *string `json:"transcript,omitempty"`
+	Year *string `json:"year,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the
