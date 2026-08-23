@@ -235,17 +235,17 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `alt` |  |
-| `day` |  |
-| `img` |  |
-| `link` |  |
-| `month` |  |
-| `news` |  |
-| `num` |  |
-| `safe_title` |  |
-| `title` |  |
-| `transcript` |  |
-| `year` |  |
+| `alt` | Alt text / hover text for the comic |
+| `day` | Day of the month the comic was published |
+| `img` | URL to the comic image |
+| `link` | Link to related content (often empty) |
+| `month` | Month the comic was published |
+| `news` | News or announcements (often empty) |
+| `num` | Comic number/ID |
+| `safe_title` | URL-safe version of the comic title |
+| `title` | Title of the comic |
+| `transcript` | Text transcript of the comic (when available) |
+| `year` | Year the comic was published |
 
 Operations: Load.
 
@@ -270,17 +270,17 @@ Create an instance: `info0 = client.Info0`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `alt` | `String` |  |
-| `day` | `String` |  |
-| `img` | `String` |  |
-| `link` | `String` |  |
-| `month` | `String` |  |
-| `news` | `String` |  |
-| `num` | `Integer` |  |
-| `safe_title` | `String` |  |
-| `title` | `String` |  |
-| `transcript` | `String` |  |
-| `year` | `String` |  |
+| `alt` | `String` | Alt text / hover text for the comic |
+| `day` | `String` | Day of the month the comic was published |
+| `img` | `String` | URL to the comic image |
+| `link` | `String` | Link to related content (often empty) |
+| `month` | `String` | Month the comic was published |
+| `news` | `String` | News or announcements (often empty) |
+| `num` | `Integer` | Comic number/ID |
+| `safe_title` | `String` | URL-safe version of the comic title |
+| `title` | `String` | Title of the comic |
+| `transcript` | `String` | Text transcript of the comic (when available) |
+| `year` | `String` | Year the comic was published |
 
 #### Example: Load
 

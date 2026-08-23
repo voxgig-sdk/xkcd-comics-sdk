@@ -93,17 +93,17 @@ info0 = client.Info0
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `alt` | `String` | No |  |
-| `day` | `String` | Yes |  |
-| `img` | `String` | Yes |  |
-| `link` | `String` | No |  |
-| `month` | `String` | Yes |  |
-| `news` | `String` | No |  |
-| `num` | `Integer` | Yes |  |
-| `safe_title` | `String` | No |  |
-| `title` | `String` | Yes |  |
-| `transcript` | `String` | No |  |
-| `year` | `String` | Yes |  |
+| `alt` | `String` | No | Alt text / hover text for the comic |
+| `day` | `String` | Yes | Day of the month the comic was published |
+| `img` | `String` | Yes | URL to the comic image |
+| `link` | `String` | No | Link to related content (often empty) |
+| `month` | `String` | Yes | Month the comic was published |
+| `news` | `String` | No | News or announcements (often empty) |
+| `num` | `Integer` | Yes | Comic number/ID |
+| `safe_title` | `String` | No | URL-safe version of the comic title |
+| `title` | `String` | Yes | Title of the comic |
+| `transcript` | `String` | No | Text transcript of the comic (when available) |
+| `year` | `String` | Yes | Year the comic was published |
 
 ### Operations
 

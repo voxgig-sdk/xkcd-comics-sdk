@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "XkcdComics",
+			"slug": "xkcd-comics",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -33,52 +36,63 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "alt",
+						"short": "Alt text / hover text for the comic",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "day",
 						"req": true,
+						"short": "Day of the month the comic was published",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "img",
 						"req": true,
+						"short": "URL to the comic image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "link",
+						"short": "Link to related content (often empty)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "month",
 						"req": true,
+						"short": "Month the comic was published",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "news",
+						"short": "News or announcements (often empty)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "num",
 						"req": true,
+						"short": "Comic number/ID",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "safe_title",
+						"short": "URL-safe version of the comic title",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "title",
 						"req": true,
+						"short": "Title of the comic",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "transcript",
+						"short": "Text transcript of the comic (when available)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "year",
 						"req": true,
+						"short": "Year the comic was published",
 						"type": "`$STRING`",
 					},
 				},

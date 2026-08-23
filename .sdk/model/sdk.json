@@ -36,66 +36,77 @@
               "active": true,
               "name": "alt",
               "req": false,
+              "short": "Alt text / hover text for the comic",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "day",
               "req": true,
+              "short": "Day of the month the comic was published",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "img",
               "req": true,
+              "short": "URL to the comic image",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "link",
               "req": false,
+              "short": "Link to related content (often empty)",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "month",
               "req": true,
+              "short": "Month the comic was published",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "news",
               "req": false,
+              "short": "News or announcements (often empty)",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "num",
               "req": true,
+              "short": "Comic number/ID",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "safe_title",
               "req": false,
+              "short": "URL-safe version of the comic title",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "title",
               "req": true,
+              "short": "Title of the comic",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "transcript",
               "req": false,
+              "short": "Text transcript of the comic (when available)",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "year",
               "req": true,
+              "short": "Year the comic was published",
               "type": "`$STRING`"
             }
           ],

@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "XkcdComics",
+      slug = "xkcd-comics",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -29,52 +32,63 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "alt",
+            ["short"] = "Alt text / hover text for the comic",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "day",
             ["req"] = true,
+            ["short"] = "Day of the month the comic was published",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "img",
             ["req"] = true,
+            ["short"] = "URL to the comic image",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "link",
+            ["short"] = "Link to related content (often empty)",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "month",
             ["req"] = true,
+            ["short"] = "Month the comic was published",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "news",
+            ["short"] = "News or announcements (often empty)",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "num",
             ["req"] = true,
+            ["short"] = "Comic number/ID",
             ["type"] = "`$INTEGER`",
           },
           {
             ["name"] = "safe_title",
+            ["short"] = "URL-safe version of the comic title",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "title",
             ["req"] = true,
+            ["short"] = "Title of the comic",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "transcript",
+            ["short"] = "Text transcript of the comic (when available)",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "year",
             ["req"] = true,
+            ["short"] = "Year the comic was published",
             ["type"] = "`$STRING`",
           },
         },

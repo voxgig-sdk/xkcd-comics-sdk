@@ -241,17 +241,17 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `alt` |  |
-| `day` |  |
-| `img` |  |
-| `link` |  |
-| `month` |  |
-| `news` |  |
-| `num` |  |
-| `safe_title` |  |
-| `title` |  |
-| `transcript` |  |
-| `year` |  |
+| `alt` | Alt text / hover text for the comic |
+| `day` | Day of the month the comic was published |
+| `img` | URL to the comic image |
+| `link` | Link to related content (often empty) |
+| `month` | Month the comic was published |
+| `news` | News or announcements (often empty) |
+| `num` | Comic number/ID |
+| `safe_title` | URL-safe version of the comic title |
+| `title` | Title of the comic |
+| `transcript` | Text transcript of the comic (when available) |
+| `year` | Year the comic was published |
 
 Operations: Load.
 
@@ -276,17 +276,17 @@ Create an instance: `info0 = client.Info0()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `alt` | `str` |  |
-| `day` | `str` |  |
-| `img` | `str` |  |
-| `link` | `str` |  |
-| `month` | `str` |  |
-| `news` | `str` |  |
-| `num` | `int` |  |
-| `safe_title` | `str` |  |
-| `title` | `str` |  |
-| `transcript` | `str` |  |
-| `year` | `str` |  |
+| `alt` | `str` | Alt text / hover text for the comic |
+| `day` | `str` | Day of the month the comic was published |
+| `img` | `str` | URL to the comic image |
+| `link` | `str` | Link to related content (often empty) |
+| `month` | `str` | Month the comic was published |
+| `news` | `str` | News or announcements (often empty) |
+| `num` | `int` | Comic number/ID |
+| `safe_title` | `str` | URL-safe version of the comic title |
+| `title` | `str` | Title of the comic |
+| `transcript` | `str` | Text transcript of the comic (when available) |
+| `year` | `str` | Year the comic was published |
 
 #### Example: Load
 

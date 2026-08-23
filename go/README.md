@@ -6,7 +6,7 @@ The Golang SDK for the XkcdComics API — an entity-oriented client using standa
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Info0(nil)` — each with the same small set of operations (`Load`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -258,17 +258,17 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"alt"` |  |
-| `"day"` |  |
-| `"img"` |  |
-| `"link"` |  |
-| `"month"` |  |
-| `"news"` |  |
-| `"num"` |  |
-| `"safe_title"` |  |
-| `"title"` |  |
-| `"transcript"` |  |
-| `"year"` |  |
+| `"alt"` | Alt text / hover text for the comic |
+| `"day"` | Day of the month the comic was published |
+| `"img"` | URL to the comic image |
+| `"link"` | Link to related content (often empty) |
+| `"month"` | Month the comic was published |
+| `"news"` | News or announcements (often empty) |
+| `"num"` | Comic number/ID |
+| `"safe_title"` | URL-safe version of the comic title |
+| `"title"` | Title of the comic |
+| `"transcript"` | Text transcript of the comic (when available) |
+| `"year"` | Year the comic was published |
 
 Operations: Load.
 
@@ -293,17 +293,17 @@ Create an instance: `info0 := client.Info0(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `alt` | `string` |  |
-| `day` | `string` |  |
-| `img` | `string` |  |
-| `link` | `string` |  |
-| `month` | `string` |  |
-| `news` | `string` |  |
-| `num` | `int` |  |
-| `safe_title` | `string` |  |
-| `title` | `string` |  |
-| `transcript` | `string` |  |
-| `year` | `string` |  |
+| `alt` | `string` | Alt text / hover text for the comic |
+| `day` | `string` | Day of the month the comic was published |
+| `img` | `string` | URL to the comic image |
+| `link` | `string` | Link to related content (often empty) |
+| `month` | `string` | Month the comic was published |
+| `news` | `string` | News or announcements (often empty) |
+| `num` | `int` | Comic number/ID |
+| `safe_title` | `string` | URL-safe version of the comic title |
+| `title` | `string` | Title of the comic |
+| `transcript` | `string` | Text transcript of the comic (when available) |
+| `year` | `string` | Year the comic was published |
 
 #### Example: Load
 

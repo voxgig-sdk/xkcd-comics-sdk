@@ -116,17 +116,17 @@ const info0 = client.Info0()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `alt` | `string` | No |  |
-| `day` | `string` | Yes |  |
-| `img` | `string` | Yes |  |
-| `link` | `string` | No |  |
-| `month` | `string` | Yes |  |
-| `news` | `string` | No |  |
-| `num` | `number` | Yes |  |
-| `safe_title` | `string` | No |  |
-| `title` | `string` | Yes |  |
-| `transcript` | `string` | No |  |
-| `year` | `string` | Yes |  |
+| `alt` | `string` | No | Alt text / hover text for the comic |
+| `day` | `string` | Yes | Day of the month the comic was published |
+| `img` | `string` | Yes | URL to the comic image |
+| `link` | `string` | No | Link to related content (often empty) |
+| `month` | `string` | Yes | Month the comic was published |
+| `news` | `string` | No | News or announcements (often empty) |
+| `num` | `number` | Yes | Comic number/ID |
+| `safe_title` | `string` | No | URL-safe version of the comic title |
+| `title` | `string` | Yes | Title of the comic |
+| `transcript` | `string` | No | Text transcript of the comic (when available) |
+| `year` | `string` | Yes | Year the comic was published |
 
 ### Operations
 

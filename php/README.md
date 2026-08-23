@@ -245,17 +245,17 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `alt` |  |
-| `day` |  |
-| `img` |  |
-| `link` |  |
-| `month` |  |
-| `news` |  |
-| `num` |  |
-| `safe_title` |  |
-| `title` |  |
-| `transcript` |  |
-| `year` |  |
+| `alt` | Alt text / hover text for the comic |
+| `day` | Day of the month the comic was published |
+| `img` | URL to the comic image |
+| `link` | Link to related content (often empty) |
+| `month` | Month the comic was published |
+| `news` | News or announcements (often empty) |
+| `num` | Comic number/ID |
+| `safe_title` | URL-safe version of the comic title |
+| `title` | Title of the comic |
+| `transcript` | Text transcript of the comic (when available) |
+| `year` | Year the comic was published |
 
 Operations: Load.
 
@@ -280,17 +280,17 @@ Create an instance: `$info0 = $client->Info0();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `alt` | `string` |  |
-| `day` | `string` |  |
-| `img` | `string` |  |
-| `link` | `string` |  |
-| `month` | `string` |  |
-| `news` | `string` |  |
-| `num` | `int` |  |
-| `safe_title` | `string` |  |
-| `title` | `string` |  |
-| `transcript` | `string` |  |
-| `year` | `string` |  |
+| `alt` | `string` | Alt text / hover text for the comic |
+| `day` | `string` | Day of the month the comic was published |
+| `img` | `string` | URL to the comic image |
+| `link` | `string` | Link to related content (often empty) |
+| `month` | `string` | Month the comic was published |
+| `news` | `string` | News or announcements (often empty) |
+| `num` | `int` | Comic number/ID |
+| `safe_title` | `string` | URL-safe version of the comic title |
+| `title` | `string` | Title of the comic |
+| `transcript` | `string` | Text transcript of the comic (when available) |
+| `year` | `string` | Year the comic was published |
 
 #### Example: Load
 

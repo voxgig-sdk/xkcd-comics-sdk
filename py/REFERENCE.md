@@ -87,17 +87,17 @@ info0 = client.Info0()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `alt` | `str` | No |  |
-| `day` | `str` | Yes |  |
-| `img` | `str` | Yes |  |
-| `link` | `str` | No |  |
-| `month` | `str` | Yes |  |
-| `news` | `str` | No |  |
-| `num` | `int` | Yes |  |
-| `safe_title` | `str` | No |  |
-| `title` | `str` | Yes |  |
-| `transcript` | `str` | No |  |
-| `year` | `str` | Yes |  |
+| `alt` | `str` | No | Alt text / hover text for the comic |
+| `day` | `str` | Yes | Day of the month the comic was published |
+| `img` | `str` | Yes | URL to the comic image |
+| `link` | `str` | No | Link to related content (often empty) |
+| `month` | `str` | Yes | Month the comic was published |
+| `news` | `str` | No | News or announcements (often empty) |
+| `num` | `int` | Yes | Comic number/ID |
+| `safe_title` | `str` | No | URL-safe version of the comic title |
+| `title` | `str` | Yes | Title of the comic |
+| `transcript` | `str` | No | Text transcript of the comic (when available) |
+| `year` | `str` | Yes | Year the comic was published |
 
 ### Operations
 
