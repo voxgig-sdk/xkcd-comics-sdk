@@ -43,7 +43,8 @@ class Info0Entity extends XkcdComicsEntityBase<Info0> {
     const {
       makeContext,
       done,
-      error,
+      // The registry name is `makeError`; `error` is the local alias.
+      makeError: error,
       featureHook,
       makePoint,
       makeRequest,

@@ -28,6 +28,7 @@ module XkcdComicsConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
