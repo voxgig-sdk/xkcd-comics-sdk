@@ -43,6 +43,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "uri",
             ["name"] = "img",
             ["req"] = true,
             ["short"] = "URL to the comic image",
@@ -115,9 +116,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/{comic_id}/info.0.json",
-                ["parts"] = {
-                  "{comic_id}",
-                  "info.0.json",
+                ["segments"] = {
+                  {
+                    ["var"] = "comic_id",
+                  },
+                  {
+                    ["lit"] = "info.0.json",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -128,19 +133,28 @@ local function make_config()
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
+                ["parts"] = {
+                  "{comic_id}",
+                  "info.0.json",
+                },
               },
               {
                 ["args"] = {},
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/info.0.json",
-                ["parts"] = {
-                  "info.0.json",
+                ["segments"] = {
+                  {
+                    ["lit"] = "info.0.json",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "info.0.json",
                 },
               },
             },

@@ -18,6 +18,7 @@ main: kit: entity: info0: {
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "img"
       req: true
       short: "URL to the comic image"
@@ -93,9 +94,13 @@ main: kit: entity: info0: {
           }
           method: "GET"
           orig: "/{comic_id}/info.0.json"
-          parts: [
-            "{comic_id}"
-            "info.0.json"
+          segments: [
+            {
+              var: "comic_id"
+            }
+            {
+              lit: "info.0.json"
+            }
           ]
           select: {
             exist: [
@@ -110,8 +115,10 @@ main: kit: entity: info0: {
         {
           method: "GET"
           orig: "/info.0.json"
-          parts: [
-            "info.0.json"
+          segments: [
+            {
+              lit: "info.0.json"
+            }
           ]
           transform: {
             req: "`reqdata`"
