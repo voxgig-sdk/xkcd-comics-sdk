@@ -105,7 +105,7 @@ local result, err = client:Info0():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/xkcd-comics` | publish pending — [install from git tag](https://github.com/voxgig-sdk/xkcd-comics-sdk/releases) |
+| TypeScript | `@voxgig-sdk/xkcd-comics-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/xkcd-comics-sdk/releases) |
 | Python | `voxgig-sdk-xkcd-comics` | publish pending — [install from git tag](https://github.com/voxgig-sdk/xkcd-comics-sdk/releases) |
 | PHP | `voxgig-sdk/xkcd-comics` | publish pending — [install from git tag](https://github.com/voxgig-sdk/xkcd-comics-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/xkcd-comics-sdk/go` | `go get github.com/voxgig-sdk/xkcd-comics-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:Info0():load()
 ### TypeScript
 
 ```ts
-import { XkcdComicsSDK } from '@voxgig-sdk/xkcd-comics'
+import { XkcdComicsSDK } from '@voxgig-sdk/xkcd-comics-sdk'
 
 const client = new XkcdComicsSDK()
 

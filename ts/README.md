@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { XkcdComicsSDK } from '@voxgig-sdk/xkcd-comics'
+import { XkcdComicsSDK } from '@voxgig-sdk/xkcd-comics-sdk'
 
 const client = new XkcdComicsSDK()
 ```
@@ -421,7 +421,7 @@ xkcd-comics/
 Import the SDK from the package root:
 
 ```ts
-import { XkcdComicsSDK } from '@voxgig-sdk/xkcd-comics'
+import { XkcdComicsSDK } from '@voxgig-sdk/xkcd-comics-sdk'
 ```
 
 ### Entity state
