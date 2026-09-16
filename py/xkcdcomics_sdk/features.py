@@ -1,12 +1,18 @@
 # XkcdComics SDK feature factory
 
 from xkcdcomics_sdk.feature.base_feature import XkcdComicsBaseFeature
+from xkcdcomics_sdk.feature.ratelimit_feature import XkcdComicsRatelimitFeature
+from xkcdcomics_sdk.feature.retry_feature import XkcdComicsRetryFeature
 from xkcdcomics_sdk.feature.test_feature import XkcdComicsTestFeature
+from xkcdcomics_sdk.feature.timeout_feature import XkcdComicsTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: XkcdComicsBaseFeature(),
+    "ratelimit": lambda: XkcdComicsRatelimitFeature(),
+    "retry": lambda: XkcdComicsRetryFeature(),
     "test": lambda: XkcdComicsTestFeature(),
+    "timeout": lambda: XkcdComicsTimeoutFeature(),
 }
 
 

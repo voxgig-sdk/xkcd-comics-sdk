@@ -4,7 +4,10 @@ declare(strict_types=1);
 // XkcdComics SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class XkcdComicsFeatures
@@ -14,8 +17,14 @@ class XkcdComicsFeatures
         switch ($name) {
             case "base":
                 return new XkcdComicsBaseFeature();
+            case "ratelimit":
+                return new XkcdComicsRatelimitFeature();
+            case "retry":
+                return new XkcdComicsRetryFeature();
             case "test":
                 return new XkcdComicsTestFeature();
+            case "timeout":
+                return new XkcdComicsTimeoutFeature();
             default:
                 return new XkcdComicsBaseFeature();
         }
@@ -31,7 +40,10 @@ class XkcdComicsFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

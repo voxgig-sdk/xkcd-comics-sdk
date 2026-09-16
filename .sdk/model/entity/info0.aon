@@ -92,6 +92,12 @@ main: kit: entity: info0: {
               }
             ]
           }
+          contract: {
+            id: "GET /{comic_id}/info.0.json"
+            json: "{\"operationId\":\"getComicById\",\"parameters\":[{\"description\":\"The ID number of the comic to fetch\",\"in\":\"path\",\"name\":\"comic_id\",\"required\":true,\"schema\":{\"example\":614,\"minimum\":1,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"alt\":\"If you don't have an extension cord I can get that too.  Because we're friends!  Right?\",\"day\":\"25\",\"img\":\"https://imgs.xkcd.com/comics/woodpecker.png\",\"link\":\"\",\"month\":\"9\",\"news\":\"\",\"num\":614,\"safe_title\":\"Woodpecker\",\"title\":\"Woodpecker\",\"transcript\":\"[[A man with a beret and a woman are standing on a boardwalk, leaning on a handrail.]]\\nMan: A woodpecker!\\n<<Pop pop pop>>\\nWoman: Yup.\\n\\n[[The woodpecker is banging its head against a tree.]]\\nWoman: He hatched about this time last year.\\n<<Pop pop pop pop>>\\n\\n[[The woman walks away.  The man is still looking at the woodpecker.]]\\nMan: ... woodpecker?\\nMan: It's your birthday!\\n\\nMan: Did you know?\\n\\nMan: Did... did nobody tell you?\\n\\n[[The man stands, looking.]]\\n\\n[[The man walks away.]]\\n\\n[[There is a tree.]]\\n\\n[[The man approaches the tree with a present in a box, tied up with a ribbon.]]\\n\\n[[The man sets the present down at the base of the tree and looks up.]]\\n\\n[[The man walks away.]]\\n\\n[[The present sits at the bottom of the tree as the sun sets.]]\\n\\n{{Title text: If you don't have an extension cord I can get that too.  Because we're friends!  Right?}}\",\"year\":\"2009\"},\"schema\":{\"description\":\"XKCD comic metadata and content\",\"properties\":{\"alt\":{\"description\":\"Alt text / hover text for the comic\",\"type\":\"string\"},\"day\":{\"description\":\"Day of the month the comic was published\",\"type\":\"string\"},\"img\":{\"description\":\"URL to the comic image\",\"format\":\"uri\",\"type\":\"string\"},\"link\":{\"description\":\"Link to related content (often empty)\",\"type\":\"string\"},\"month\":{\"description\":\"Month the comic was published\",\"type\":\"string\"},\"news\":{\"description\":\"News or announcements (often empty)\",\"type\":\"string\"},\"num\":{\"description\":\"Comic number/ID\",\"type\":\"integer\"},\"safe_title\":{\"description\":\"URL-safe version of the comic title\",\"type\":\"string\"},\"title\":{\"description\":\"Title of the comic\",\"type\":\"string\"},\"transcript\":{\"description\":\"Text transcript of the comic (when available)\",\"type\":\"string\"},\"year\":{\"description\":\"Year the comic was published\",\"type\":\"string\"}},\"required\":[\"month\",\"num\",\"year\",\"title\",\"img\",\"day\"],\"type\":\"object\"}}},\"description\":\"Successful response with comic data\"},\"404\":{\"description\":\"Comic not found\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/{comic_id}/info.0.json"
           segments: [
@@ -113,6 +119,12 @@ main: kit: entity: info0: {
           }
         }
         {
+          contract: {
+            id: "GET /info.0.json"
+            json: "{\"operationId\":\"getCurrentComic\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"alt\":\"This is the graph that's seared into my mind.\",\"day\":\"1\",\"img\":\"https://imgs.xkcd.com/comics/global_temperature_over_my_lifetime.png\",\"link\":\"\",\"month\":\"3\",\"news\":\"\",\"num\":2500,\"safe_title\":\"Global Temperature Over My Lifetime\",\"title\":\"Global Temperature Over My Lifetime\",\"transcript\":\"\",\"year\":\"2021\"},\"schema\":{\"description\":\"XKCD comic metadata and content\",\"properties\":{\"alt\":{\"description\":\"Alt text / hover text for the comic\",\"type\":\"string\"},\"day\":{\"description\":\"Day of the month the comic was published\",\"type\":\"string\"},\"img\":{\"description\":\"URL to the comic image\",\"format\":\"uri\",\"type\":\"string\"},\"link\":{\"description\":\"Link to related content (often empty)\",\"type\":\"string\"},\"month\":{\"description\":\"Month the comic was published\",\"type\":\"string\"},\"news\":{\"description\":\"News or announcements (often empty)\",\"type\":\"string\"},\"num\":{\"description\":\"Comic number/ID\",\"type\":\"integer\"},\"safe_title\":{\"description\":\"URL-safe version of the comic title\",\"type\":\"string\"},\"title\":{\"description\":\"Title of the comic\",\"type\":\"string\"},\"transcript\":{\"description\":\"Text transcript of the comic (when available)\",\"type\":\"string\"},\"year\":{\"description\":\"Year the comic was published\",\"type\":\"string\"}},\"required\":[\"month\",\"num\",\"year\",\"title\",\"img\",\"day\"],\"type\":\"object\"}}},\"description\":\"Successful response with current comic data\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/info.0.json"
           segments: [
