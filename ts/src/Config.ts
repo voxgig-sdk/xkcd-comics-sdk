@@ -127,9 +127,9 @@ class Config {
 
     entity: {
       
-      info0: {
-      },
-
+        info0: {
+        },
+  
     }
   }
 

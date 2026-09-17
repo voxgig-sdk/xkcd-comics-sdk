@@ -105,12 +105,12 @@ local result, err = client:Info0():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/xkcd-comics-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/xkcd-comics-sdk/releases) |
-| Python | `voxgig-sdk-xkcd-comics` | publish pending — [install from git tag](https://github.com/voxgig-sdk/xkcd-comics-sdk/releases) |
-| PHP | `voxgig-sdk/xkcd-comics` | publish pending — [install from git tag](https://github.com/voxgig-sdk/xkcd-comics-sdk/releases) |
+| TypeScript | `@voxgig-sdk/xkcd-comics-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/xkcd-comics-sdk/tags) |
+| Python | `voxgig-sdk-xkcd-comics` | publish pending — [install from git tag](https://github.com/voxgig-sdk/xkcd-comics-sdk/tags) |
+| PHP | `voxgig-sdk/xkcd-comics` | publish pending — [install from git tag](https://github.com/voxgig-sdk/xkcd-comics-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/xkcd-comics-sdk/go` | `go get github.com/voxgig-sdk/xkcd-comics-sdk/go@latest` |
-| Ruby | `voxgig-sdk-xkcd-comics` | publish pending — [install from git tag](https://github.com/voxgig-sdk/xkcd-comics-sdk/releases) |
-| Lua | `voxgig-sdk-xkcd-comics` | publish pending — [install from git tag](https://github.com/voxgig-sdk/xkcd-comics-sdk/releases) |
+| Ruby | `voxgig-sdk-xkcd-comics` | publish pending — [install from git tag](https://github.com/voxgig-sdk/xkcd-comics-sdk/tags) |
+| Lua | `voxgig-sdk-xkcd-comics` | publish pending — [install from git tag](https://github.com/voxgig-sdk/xkcd-comics-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/xkcd-comics-sdk/go-cli` | `go install github.com/voxgig-sdk/xkcd-comics-sdk/go-cli/cmd/xkcd-comics@latest` |
 | Go MCP server | `github.com/voxgig-sdk/xkcd-comics-sdk/go-mcp` | `go get github.com/voxgig-sdk/xkcd-comics-sdk/go-mcp@latest` |
 
